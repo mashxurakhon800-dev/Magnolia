@@ -15,31 +15,27 @@ export const MenuBookView: React.FC<MenuBookViewProps> = ({
   currentLanguage,
   onOpenDetails,
 }) => {
-  const [activeSheet, setActiveSheet] = useState<'traditional' | 'pan_asian' | 'drinks'>('traditional');
+  const [activeSheet, setActiveSheet] = useState<'traditional' | 'drinks'>('traditional');
 
   // Exact dishes categorized
   const chuchvara = dishes.filter((d) => d.categoryId === 'chuchvara');
   const manti = dishes.filter((d) => d.categoryId === 'manti');
   const soups = dishes.filter((d) => d.categoryId === 'soups');
   const mains = dishes.filter((d) => d.categoryId === 'mains');
-  const panAsian = dishes.filter((d) => d.categoryId === 'pan_asian');
   const drinks = dishes.filter((d) => d.categoryId === 'drinks');
 
   const sheetTabs = {
     ru: [
       { id: 'traditional', label: 'Лист 1: Традиционная кухня' },
-      { id: 'pan_asian', label: 'Лист 2: Паназиатские блюда' },
-      { id: 'drinks', label: 'Лист 3: Напитки (NAPITKI)' },
+      { id: 'drinks', label: 'Лист 2: Напитки (NAPITKI)' },
     ],
     uz: [
       { id: 'traditional', label: '1-Varaq: Milliy oshxona' },
-      { id: 'pan_asian', label: '2-Varaq: Pan Osiyo taomlari' },
-      { id: 'drinks', label: '3-Varaq: Napitki' },
+      { id: 'drinks', label: '2-Varaq: Napitki' },
     ],
     en: [
       { id: 'traditional', label: 'Sheet 1: Traditional Kitchen' },
-      { id: 'pan_asian', label: 'Sheet 2: Pan Asian Specials' },
-      { id: 'drinks', label: 'Sheet 3: Beverages (NAPITKI)' },
+      { id: 'drinks', label: 'Sheet 2: Beverages (NAPITKI)' },
     ],
   }[currentLanguage];
 
@@ -171,23 +167,7 @@ export const MenuBookView: React.FC<MenuBookViewProps> = ({
           </div>
         )}
 
-        {/* Sheet 2: Pan Asian Specials */}
-        {activeSheet === 'pan_asian' && (
-          <div className="relative z-10 mt-8 space-y-6 max-w-2xl mx-auto">
-            <div className="text-center mb-6">
-              <h3 className="font-cinzel text-lg md:text-xl font-bold tracking-[0.25em] text-[#FFE8C2] uppercase">
-                Pan Osiyo taomlari
-              </h3>
-              <div className="w-20 h-[1px] bg-[#F2DEB9]/60 mx-auto mt-2" />
-            </div>
-
-            <div className="space-y-1.5">
-              {panAsian.map((dish) => renderDishRow(dish))}
-            </div>
-          </div>
-        )}
-
-        {/* Sheet 3: NAPITKI (Exact matching Image 2) */}
+        {/* Sheet 2: NAPITKI (Exact matching Image 2) */}
         {activeSheet === 'drinks' && (
           <div className="relative z-10 mt-8 space-y-8 max-w-xl mx-auto">
             <div>

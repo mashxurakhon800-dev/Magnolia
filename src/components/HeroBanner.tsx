@@ -22,25 +22,25 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
 }) => {
   const content = {
     ru: {
-      searchPlaceholder: 'Поиск блюд (чучвара, манты, шурпа, креветки, напитки...)...',
+      searchPlaceholder: 'Поиск блюд (чучвара, манты, шурпа, соусы, напитки...)...',
       openStatus: 'Часы работы: 08:00 – 23:00',
       viewCards: 'Витрина с фото',
       viewBook: 'Печатное меню',
-      welcome: 'Добро пожаловать в гастрономическое пространство восточного гостеприимства и авторских паназиатских блюд.',
+      welcome: 'Добро пожаловать в Magnolia: восточное гостеприимство, фирменная домашняя чучвара, манты и горячие сытные блюда.',
     },
     uz: {
-      searchPlaceholder: 'Taomlarni qidirish (chuchvara, manti, sho\'rva, krevetkalar, ichimliklar...)...',
+      searchPlaceholder: 'Taomlarni qidirish (chuchvara, manti, sho\'rva, ichimliklar...)...',
       openStatus: 'Ish vaqti: 08:00 – 23:00',
       viewCards: 'Foto-vitrina',
       viewBook: 'Asl menyu varag\'i',
-      welcome: 'Sharqona mehmondo\'stlik, nozik taomlar va mualliflik Pan Osiyo oshxonasiga xush kelibsiz.',
+      welcome: 'Sharqona mehmondo\'stlik, nozik xonaki chuchvara, mazali manti va to\'yimli taomlar olamiga xush kelibsiz.',
     },
     en: {
-      searchPlaceholder: 'Search dishes (dumplings, manti, soups, prawns, drinks...)...',
+      searchPlaceholder: 'Search dishes (dumplings, manti, soups, mains, drinks...)...',
       openStatus: 'Working hours: 08:00 – 23:00',
       viewCards: 'Photo Cards',
       viewBook: 'Menu Card',
-      welcome: 'Welcome to Magnolia: where Pan Asian culinary precision meets Turkish hearth tradition.',
+      welcome: 'Welcome to Magnolia: artisanal handmade chuchvara dumplings, succulent manti and rich hearth classics.',
     },
   }[currentLanguage];
 

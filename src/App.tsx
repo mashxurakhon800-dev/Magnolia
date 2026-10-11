@@ -23,7 +23,6 @@ const CATEGORY_SECTION_ICONS: Record<string, React.FC<{ className?: string }>> =
   manti: CircleDot,
   soups: CookingPot,
   mains: Flame,
-  pan_asian: Sparkles,
   drinks: CupSoda,
 };
 
@@ -90,9 +89,6 @@ export default function App() {
       if (activeFilterTag === 'popular') {
         return !!dish.popular;
       }
-      if (activeFilterTag === 'asian') {
-        return !!dish.asianOrigin;
-      }
     }
 
     return true;
@@ -123,7 +119,6 @@ export default function App() {
       manti: 0,
       soups: 0,
       mains: 0,
-      pan_asian: 0,
       drinks: 0,
     };
 
@@ -142,19 +137,16 @@ export default function App() {
     ru: [
       { id: 'all', label: 'Все блюда' },
       { id: 'popular', label: 'Популярное' },
-      { id: 'asian', label: 'Паназия' },
       { id: 'favorites', label: 'Избранное' },
     ],
     uz: [
       { id: 'all', label: 'Hammasi' },
       { id: 'popular', label: 'Ommabop' },
-      { id: 'asian', label: 'Pan Osiyo' },
       { id: 'favorites', label: 'Sevimlilar' },
     ],
     en: [
       { id: 'all', label: 'All Items' },
       { id: 'popular', label: 'Popular' },
-      { id: 'asian', label: 'Pan Asian' },
       { id: 'favorites', label: 'Favorites' },
     ],
   }[currentLanguage];

@@ -17,7 +17,6 @@ export const Header: React.FC<HeaderProps> = ({
       manti: 'Манты',
       soups: 'Первые блюда',
       mains: 'Вторые блюда',
-      pan_asian: 'Паназия',
       drinks: 'Напитки',
       book: 'Карта меню',
     },
@@ -27,7 +26,6 @@ export const Header: React.FC<HeaderProps> = ({
       manti: 'Manti',
       soups: 'Birinchi ovqat',
       mains: 'Qo’yiq o’vqatlar',
-      pan_asian: 'Pan Osiyo',
       drinks: 'Napitki',
       book: 'Menyu varag’i',
     },
@@ -37,7 +35,6 @@ export const Header: React.FC<HeaderProps> = ({
       manti: 'Manti',
       soups: 'First Courses',
       mains: 'Main Dishes',
-      pan_asian: 'Pan Asian',
       drinks: 'Beverages',
       book: 'Menu Card',
     },
@@ -80,12 +77,6 @@ export const Header: React.FC<HeaderProps> = ({
             className="hover:text-[#F5EBE1] hover:underline underline-offset-4 transition-colors whitespace-nowrap shrink-0"
           >
             {navText.mains}
-          </a>
-          <a
-            href="#pan_asian-section"
-            className="hover:text-[#F5EBE1] hover:underline underline-offset-4 transition-colors whitespace-nowrap shrink-0"
-          >
-            {navText.pan_asian}
           </a>
           <a
             href="#drinks-section"
