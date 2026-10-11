@@ -10,7 +10,7 @@ interface QRCodeModalProps {
   currentLanguage: Language;
 }
 
-export const MENU_URL = 'https://remix-magnolia-pan-asian-turkish-ki.vercel.app';
+export const MENU_URL = 'https://remix-magnolia-pan-asian-turkish-ki.vercel.app/';
 
 export const QRCodeModal: React.FC<QRCodeModalProps> = ({
   isOpen,

@@ -9,7 +9,7 @@ interface TableQRCodeBannerProps {
   onOpenModal: () => void;
 }
 
-const MENU_URL = 'https://remix-magnolia-pan-asian-turkish-ki.vercel.app';
+const MENU_URL = 'https://remix-magnolia-pan-asian-turkish-ki.vercel.app/';
 
 export const TableQRCodeBanner: React.FC<TableQRCodeBannerProps> = ({
   currentLanguage,
