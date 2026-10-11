@@ -5,8 +5,6 @@ import { CategoryNav } from './components/CategoryNav';
 import { DishCard } from './components/DishCard';
 import { DishDetailModal } from './components/DishDetailModal';
 import { MenuBookView } from './components/MenuBookView';
-import { QRCodeModal } from './components/QRCodeModal';
-import { TableQRCodeBanner } from './components/TableQRCodeBanner';
 import { PWAInstallModal } from './components/PWAInstallModal';
 import { Footer } from './components/Footer';
 import { MENU_ITEMS, CATEGORIES } from './data/menuData';
@@ -38,7 +36,6 @@ export default function App() {
 
   // Modal
   const [selectedDishForDetails, setSelectedDishForDetails] = useState<Dish | null>(null);
-  const [isQRModalOpen, setIsQRModalOpen] = useState(false);
   const [isInstallModalOpen, setIsInstallModalOpen] = useState(false);
 
   // Favorites
@@ -162,7 +159,6 @@ export default function App() {
       <Header
         currentLanguage={currentLanguage}
         onLanguageChange={setCurrentLanguage}
-        onOpenQR={() => setIsQRModalOpen(true)}
         onOpenInstall={() => setIsInstallModalOpen(true)}
       />
 
@@ -315,19 +311,6 @@ export default function App() {
         currentLanguage={currentLanguage}
         isFavorite={selectedDishForDetails ? favorites.includes(selectedDishForDetails.id) : false}
         onToggleFavorite={handleToggleFavorite}
-      />
-
-      {/* QR Code Banner Section */}
-      <TableQRCodeBanner
-        currentLanguage={currentLanguage}
-        onOpenModal={() => setIsQRModalOpen(true)}
-      />
-
-      {/* QR Code Modal */}
-      <QRCodeModal
-        isOpen={isQRModalOpen}
-        onClose={() => setIsQRModalOpen(false)}
-        currentLanguage={currentLanguage}
       />
 
       {/* PWA Tablet Install Modal */}

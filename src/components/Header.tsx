@@ -1,18 +1,16 @@
 import React from 'react';
-import { QrCode, Tablet } from 'lucide-react';
+import { Tablet } from 'lucide-react';
 import { Language } from '../types/menu';
 
 interface HeaderProps {
   currentLanguage: Language;
   onLanguageChange: (lang: Language) => void;
-  onOpenQR?: () => void;
   onOpenInstall?: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
   currentLanguage,
   onLanguageChange,
-  onOpenQR,
   onOpenInstall,
 }) => {
   const navText = {
@@ -107,17 +105,6 @@ export const Header: React.FC<HeaderProps> = ({
             >
               <Tablet className="w-3.5 h-3.5 text-[#F4D185]" />
               <span className="hidden sm:inline">На планшет</span>
-            </button>
-          )}
-
-          {onOpenQR && (
-            <button
-              onClick={onOpenQR}
-              className="flex items-center gap-1.5 px-3 py-1.5 bg-[#331117] hover:bg-[#4C1922] text-[#F4D185] hover:text-white border border-[#6B2329] rounded-xl text-xs font-semibold transition-all shadow-sm active:scale-95"
-              title="QR-код меню для столов"
-            >
-              <QrCode className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">QR Меню</span>
             </button>
           )}
 
