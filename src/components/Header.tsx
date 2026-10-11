@@ -1,17 +1,19 @@
 import React from 'react';
-import { QrCode } from 'lucide-react';
+import { QrCode, Tablet } from 'lucide-react';
 import { Language } from '../types/menu';
 
 interface HeaderProps {
   currentLanguage: Language;
   onLanguageChange: (lang: Language) => void;
   onOpenQR?: () => void;
+  onOpenInstall?: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
   currentLanguage,
   onLanguageChange,
   onOpenQR,
+  onOpenInstall,
 }) => {
   const navText = {
     ru: {
@@ -95,8 +97,19 @@ export const Header: React.FC<HeaderProps> = ({
           </a>
         </nav>
 
-        {/* Zone 3: 1 clean primary control - Language switcher & QR */}
+        {/* Zone 3: 1 clean primary control - Language switcher & Actions */}
         <div className="flex items-center gap-2 shrink-0">
+          {onOpenInstall && (
+            <button
+              onClick={onOpenInstall}
+              className="flex items-center gap-1.5 px-3 py-1.5 bg-[#45161F] hover:bg-[#5E1F2A] text-[#FAF5EE] border border-[#7D2836] rounded-xl text-xs font-semibold transition-all shadow-sm active:scale-95"
+              title="Установить приложение на планшет"
+            >
+              <Tablet className="w-3.5 h-3.5 text-[#F4D185]" />
+              <span className="hidden sm:inline">На планшет</span>
+            </button>
+          )}
+
           {onOpenQR && (
             <button
               onClick={onOpenQR}

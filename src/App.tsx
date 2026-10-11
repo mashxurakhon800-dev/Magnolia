@@ -7,6 +7,7 @@ import { DishDetailModal } from './components/DishDetailModal';
 import { MenuBookView } from './components/MenuBookView';
 import { QRCodeModal } from './components/QRCodeModal';
 import { TableQRCodeBanner } from './components/TableQRCodeBanner';
+import { PWAInstallModal } from './components/PWAInstallModal';
 import { Footer } from './components/Footer';
 import { MENU_ITEMS, CATEGORIES } from './data/menuData';
 import { Dish, CategoryId, Language } from './types/menu';
@@ -38,6 +39,7 @@ export default function App() {
   // Modal
   const [selectedDishForDetails, setSelectedDishForDetails] = useState<Dish | null>(null);
   const [isQRModalOpen, setIsQRModalOpen] = useState(false);
+  const [isInstallModalOpen, setIsInstallModalOpen] = useState(false);
 
   // Favorites
   const [favorites, setFavorites] = useState<string[]>(() => {
@@ -161,6 +163,7 @@ export default function App() {
         currentLanguage={currentLanguage}
         onLanguageChange={setCurrentLanguage}
         onOpenQR={() => setIsQRModalOpen(true)}
+        onOpenInstall={() => setIsInstallModalOpen(true)}
       />
 
       {/* 2. Hero Banner */}
@@ -324,6 +327,13 @@ export default function App() {
       <QRCodeModal
         isOpen={isQRModalOpen}
         onClose={() => setIsQRModalOpen(false)}
+        currentLanguage={currentLanguage}
+      />
+
+      {/* PWA Tablet Install Modal */}
+      <PWAInstallModal
+        isOpen={isInstallModalOpen}
+        onClose={() => setIsInstallModalOpen(false)}
         currentLanguage={currentLanguage}
       />
 
