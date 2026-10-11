@@ -1,0 +1,8 @@
+{
+  "name": "Remix Magnolia — Pan Asian \u0026 Turkish Kitchen",
+  "description": "Элегантное интерактивное меню ресторана Magnolia: фирменная чучвара, манты, супы, паназиатские закуски, напитки и заказ к столу.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
