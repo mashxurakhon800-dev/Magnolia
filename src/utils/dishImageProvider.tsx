@@ -17,6 +17,22 @@ export const CULINARY_PRESETS: Record<string, CulinaryVisual> = {
     badgeLabel: 'Сливочный соус',
     ambientLight: 'rgba(255, 224, 130, 0.3)',
   },
+  'chuchvara-carbonara': {
+    bgGradient: 'from-[#46191D] via-[#321115] to-[#1C080A]',
+    accentColor: '#FDD835',
+    plateColor: '#FAF5EE',
+    garnishEmoji: '🥓',
+    badgeLabel: 'Карбонара соус',
+    ambientLight: 'rgba(253, 216, 53, 0.3)',
+  },
+  'chuchvara-ramen': {
+    bgGradient: 'from-[#421A15] via-[#2D120E] to-[#190806]',
+    accentColor: '#FFA726',
+    plateColor: '#211D1E',
+    garnishEmoji: '🍜',
+    badgeLabel: 'Рамен с чучварой',
+    ambientLight: 'rgba(255, 167, 38, 0.3)',
+  },
   'chuchvara-bolognese': {
     bgGradient: 'from-[#48181B] via-[#330F12] to-[#1B0608]',
     accentColor: '#E57373',
