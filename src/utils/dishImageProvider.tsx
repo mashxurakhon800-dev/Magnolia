@@ -171,4 +171,30 @@ export const CULINARY_PRESETS: Record<string, CulinaryVisual> = {
     badgeLabel: 'Лечебная в стекле',
     ambientLight: 'rgba(77, 182, 172, 0.3)',
   },
+
+  // Rolls & Sushi
+  'classic-roll': {
+    bgGradient: 'from-[#2D1218] via-[#1F0A0E] to-[#120406]',
+    accentColor: '#F48FB1',
+    plateColor: '#1A181E',
+    garnishEmoji: '🍣',
+    badgeLabel: 'Фирменный ролл',
+    ambientLight: 'rgba(244, 143, 177, 0.25)',
+  },
+  'baked-roll': {
+    bgGradient: 'from-[#3D1A10] via-[#2A1108] to-[#160703]',
+    accentColor: '#FFB74D',
+    plateColor: '#1C1512',
+    garnishEmoji: '🔥',
+    badgeLabel: 'Запеченный ролл',
+    ambientLight: 'rgba(255, 183, 77, 0.3)',
+  },
+  'tempura-roll': {
+    bgGradient: 'from-[#3A220E] via-[#261507] to-[#140A02]',
+    accentColor: '#FFE082',
+    plateColor: '#201A12',
+    garnishEmoji: '🍤',
+    badgeLabel: 'Хрустящая темпура',
+    ambientLight: 'rgba(255, 224, 130, 0.3)',
+  },
 };

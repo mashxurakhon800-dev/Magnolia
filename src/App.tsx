@@ -16,10 +16,12 @@ import {
   CookingPot, 
   Flame, 
   Sparkles, 
-  CupSoda 
+  CupSoda,
+  Fish 
 } from 'lucide-react';
 
 const CATEGORY_SECTION_ICONS: Record<string, React.FC<{ className?: string }>> = {
+  rolls: Fish,
   chuchvara: Soup,
   manti: CircleDot,
   soups: CookingPot,
@@ -91,6 +93,9 @@ export default function App() {
       if (activeFilterTag === 'popular') {
         return !!dish.popular;
       }
+      if (activeFilterTag === 'rolls') {
+        return dish.categoryId === 'rolls';
+      }
     }
 
     return true;
@@ -117,6 +122,7 @@ export default function App() {
   const categoryCounts = useMemo(() => {
     const counts: Record<CategoryId, number> = {
       all: MENU_ITEMS.length,
+      rolls: 0,
       chuchvara: 0,
       manti: 0,
       soups: 0,
@@ -138,16 +144,19 @@ export default function App() {
   const filterTagLabels = {
     ru: [
       { id: 'all', label: 'Все блюда' },
+      { id: 'rolls', label: '🍣 Роллы и суши' },
       { id: 'popular', label: 'Популярное' },
       { id: 'favorites', label: 'Избранное' },
     ],
     uz: [
       { id: 'all', label: 'Hammasi' },
+      { id: 'rolls', label: '🍣 Rollar va sushi' },
       { id: 'popular', label: 'Ommabop' },
       { id: 'favorites', label: 'Sevimlilar' },
     ],
     en: [
       { id: 'all', label: 'All Items' },
+      { id: 'rolls', label: '🍣 Rolls & Sushi' },
       { id: 'popular', label: 'Popular' },
       { id: 'favorites', label: 'Favorites' },
     ],

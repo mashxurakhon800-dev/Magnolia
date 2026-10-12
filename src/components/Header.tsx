@@ -16,6 +16,7 @@ export const Header: React.FC<HeaderProps> = ({
   const navText = {
     ru: {
       menu: 'Все меню',
+      rolls: 'Роллы и суши',
       chuchvara: 'Чучвара',
       manti: 'Манты',
       soups: 'Первые блюда',
@@ -25,6 +26,7 @@ export const Header: React.FC<HeaderProps> = ({
     },
     uz: {
       menu: 'Barcha menyu',
+      rolls: 'Rollar va sushi',
       chuchvara: 'Chuchvaralar',
       manti: 'Manti',
       soups: 'Birinchi ovqat',
@@ -34,6 +36,7 @@ export const Header: React.FC<HeaderProps> = ({
     },
     en: {
       menu: 'All Menu',
+      rolls: 'Rolls & Sushi',
       chuchvara: 'Chuchvara',
       manti: 'Manti',
       soups: 'First Courses',
@@ -57,6 +60,12 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Zone 2: Concise single-line text links */}
         <nav className="hidden lg:flex items-center gap-6 text-xs md:text-sm font-medium text-[#C7B7A3]">
+          <a
+            href="#rolls-section"
+            className="hover:text-[#F5EBE1] hover:underline underline-offset-4 transition-colors whitespace-nowrap shrink-0 text-[#F4D185]"
+          >
+            {navText.rolls}
+          </a>
           <a
             href="#chuchvara-section"
             className="hover:text-[#F5EBE1] hover:underline underline-offset-4 transition-colors whitespace-nowrap shrink-0"

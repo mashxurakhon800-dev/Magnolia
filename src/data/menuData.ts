@@ -3,6 +3,7 @@ import { Category, Dish } from '../types/menu';
 export const CATEGORIES: Category[] = [
   {
     id: 'all',
+
     name: {
       ru: 'Все меню',
       uz: 'Barcha menyu',
@@ -13,6 +14,20 @@ export const CATEGORIES: Category[] = [
       ru: 'Фирменные блюда и напитки ресторана Magnolia',
       uz: 'Magnolia restorani taomlari va ichimliklari',
       en: 'Magnolia restaurant dishes and beverages'
+    }
+  },
+  {
+    id: 'rolls',
+    name: {
+      ru: 'Роллы и суши',
+      uz: 'Rollar va sushi',
+      en: 'Rolls & Sushi'
+    },
+    iconName: 'Fish',
+    description: {
+      ru: '33 вида свежих роллов, маки, запеченных роллов и темпуры от Sushito',
+      uz: 'Sushito menyusidan 33 turdagi yangi rollar, maki va tempura',
+      en: '33 varieties of fresh rolls, maki, baked rolls & tempura from Sushito'
     }
   },
   {
@@ -88,6 +103,833 @@ export const CATEGORIES: Category[] = [
 ];
 
 export const MENU_ITEMS: Dish[] = [
+  // ===================== ROLLS & SUSHI (SUSHITO) =====================
+  {
+    id: "sushito-6-1",
+    categoryId: "rolls",
+    title: {
+      ru: "Кани маки",
+      uz: "Kani maki",
+      en: "Kani Maki"
+    },
+    description: {
+      ru: "Рис, крабовый микс",
+      uz: "Guruch, крабовый микс",
+      en: "Sushi rice, crab mix"
+    },
+    price: 25000,
+    portion: {
+      ru: "10шт в порции",
+      uz: "Porsiyada 10шт",
+      en: "10шт per portion"
+    },
+    tags: ["Классика"],
+    popular: false,
+    preparationTime: 12,
+    image: "https://sushito.uz/img/kani.da1344a5.png",
+    defaultPlaceholderType: "classic-roll"
+  },
+  {
+    id: "sushito-2-2",
+    categoryId: "rolls",
+    title: {
+      ru: "Каппа маки",
+      uz: "Kappa maki",
+      en: "Kappa Maki"
+    },
+    description: {
+      ru: "Рис, огурец",
+      uz: "Guruch, bodring",
+      en: "Sushi rice, cucumber"
+    },
+    price: 23000,
+    portion: {
+      ru: "10шт в порции",
+      uz: "Porsiyada 10шт",
+      en: "10шт per portion"
+    },
+    tags: ["Классика"],
+    popular: false,
+    preparationTime: 12,
+    image: "https://sushito.uz/img/kappa.78f21ac4.jpg",
+    defaultPlaceholderType: "classic-roll"
+  },
+  {
+    id: "sushito-1-3",
+    categoryId: "rolls",
+    title: {
+      ru: "Сяке маки",
+      uz: "Syake maki",
+      en: "Shake Maki (Salmon)"
+    },
+    description: {
+      ru: "Рис, сёмга, огурец",
+      uz: "Guruch, syomga, bodring",
+      en: "Sushi rice, salmon, cucumber"
+    },
+    price: 40000,
+    portion: {
+      ru: "10шт в порции",
+      uz: "Porsiyada 10шт",
+      en: "10шт per portion"
+    },
+    tags: ["Классика","Лосось"],
+    popular: false,
+    preparationTime: 12,
+    image: "https://sushito.uz/img/syakiMaki.030a6202.jpg",
+    defaultPlaceholderType: "classic-roll"
+  },
+  {
+    id: "sushito-3-4",
+    categoryId: "rolls",
+    title: {
+      ru: "Унаги маки",
+      uz: "Unagi maki",
+      en: "Unagi Maki (Eel)"
+    },
+    description: {
+      ru: "Рис, угорь, огурец",
+      uz: "Guruch, ilonbaliq, bodring",
+      en: "Sushi rice, eel, cucumber"
+    },
+    price: 38000,
+    portion: {
+      ru: "10шт в порции",
+      uz: "Porsiyada 10шт",
+      en: "10шт per portion"
+    },
+    tags: ["Классика","Угорь"],
+    popular: false,
+    preparationTime: 12,
+    image: "https://sushito.uz/img/unagi-maki.81dbe410.jpg",
+    defaultPlaceholderType: "classic-roll"
+  },
+  {
+    id: "sushito-10-5",
+    categoryId: "rolls",
+    title: {
+      ru: "Запечённый чикен с яблокой",
+      uz: "Olma bilan pishirilgan tovuq",
+      en: "Baked Chicken with Apple"
+    },
+    description: {
+      ru: "Рис, фирменная жареная курица, зелёное яблоко, творожный сыр, соус унаги, кунжут",
+      uz: "Guruch, фирменная жареная tovuq, зелёное яблоко, творожный pishloq, sous унаги, кунжут",
+      en: "Sushi rice, фирменная жареная курица, зелёное яблоко, cream cheese, соус унаги, кунжут"
+    },
+    price: 55000,
+    portion: {
+      ru: "10шт в порции",
+      uz: "Porsiyada 10шт",
+      en: "10шт per portion"
+    },
+    tags: ["Запеченный","Курица"],
+    popular: false,
+    preparationTime: 16,
+    image: "https://sushito.uz/img/apple-zap.87748e81.png",
+    defaultPlaceholderType: "baked-roll"
+  },
+  {
+    id: "sushito-10-6",
+    categoryId: "rolls",
+    title: {
+      ru: "Запечённый кани с яблокой",
+      uz: "Olma bilan pishirilgan kani",
+      en: "Baked Crab with Apple"
+    },
+    description: {
+      ru: "Рис, крабовый микс, зелёное яблоко, творожный сыр, соус унаги, кунжут",
+      uz: "Guruch, крабовый микс, зелёное яблоко, творожный pishloq, sous унаги, кунжут",
+      en: "Sushi rice, crab mix, зелёное яблоко, cream cheese, соус унаги, кунжут"
+    },
+    price: 60000,
+    portion: {
+      ru: "10шт в порции",
+      uz: "Porsiyada 10шт",
+      en: "10шт per portion"
+    },
+    tags: ["Запеченный"],
+    popular: false,
+    preparationTime: 16,
+    image: "https://sushito.uz/img/zapapplekrab.e38236f1.png",
+    defaultPlaceholderType: "baked-roll"
+  },
+  {
+    id: "sushito-10-7",
+    categoryId: "rolls",
+    title: {
+      ru: "Запечённый чикен",
+      uz: "Pishirilgan tovuq roll",
+      en: "Baked Chicken Roll"
+    },
+    description: {
+      ru: "Рис, фирменная жареная курица, огурец, творожный сыр, соус унаги, кунжут",
+      uz: "Guruch, фирменная жареная tovuq, bodring, творожный pishloq, sous унаги, кунжут",
+      en: "Sushi rice, фирменная жареная курица, cucumber, cream cheese, соус унаги, кунжут"
+    },
+    price: 50000,
+    portion: {
+      ru: "10шт в порции",
+      uz: "Porsiyada 10шт",
+      en: "10шт per portion"
+    },
+    tags: ["Запеченный","Курица"],
+    popular: false,
+    preparationTime: 16,
+    image: "",
+    defaultPlaceholderType: "baked-roll"
+  },
+  {
+    id: "sushito-17-8",
+    categoryId: "rolls",
+    title: {
+      ru: "Запечённый кани",
+      uz: "Pishirilgan kani (krab)",
+      en: "Baked Crab Roll"
+    },
+    description: {
+      ru: "Рис, крабовый микс, огурец, творожный сыр, соус унаги, кунжут",
+      uz: "Guruch, крабовый микс, bodring, творожный pishloq, sous унаги, кунжут",
+      en: "Sushi rice, crab mix, cucumber, cream cheese, соус унаги, кунжут"
+    },
+    price: 56000,
+    portion: {
+      ru: "10шт в порции",
+      uz: "Porsiyada 10шт",
+      en: "10шт per portion"
+    },
+    tags: ["Запеченный"],
+    popular: false,
+    preparationTime: 16,
+    image: "https://sushito.uz/img/zapkrab.0393e7c7.png",
+    defaultPlaceholderType: "baked-roll"
+  },
+  {
+    id: "sushito-9-9",
+    categoryId: "rolls",
+    title: {
+      ru: "Запечённый с сёмгой",
+      uz: "Syomga bilan pishirilgan roll",
+      en: "Baked Salmon Roll"
+    },
+    description: {
+      ru: "Рис, сёмга, огурец, творожный сыр, соус унаги, кунжут",
+      uz: "Guruch, syomga, bodring, творожный pishloq, sous унаги, кунжут",
+      en: "Sushi rice, salmon, cucumber, cream cheese, соус унаги, кунжут"
+    },
+    price: 56000,
+    portion: {
+      ru: "10шт в порции",
+      uz: "Porsiyada 10шт",
+      en: "10шт per portion"
+    },
+    tags: ["Запеченный","Лосось"],
+    popular: false,
+    preparationTime: 16,
+    image: "https://sushito.uz/img/zapsalmon.d6c22b77.png",
+    defaultPlaceholderType: "baked-roll"
+  },
+  {
+    id: "sushito-11-10",
+    categoryId: "rolls",
+    title: {
+      ru: "Запечённый с угрём",
+      uz: "Ilonbaliq (ugor) bilan pishirilgan",
+      en: "Baked Eel Roll"
+    },
+    description: {
+      ru: "Рис, угорь, огурец, творожный сыр, соус унаги, кунжут",
+      uz: "Guruch, ilonbaliq, bodring, творожный pishloq, sous унаги, кунжут",
+      en: "Sushi rice, eel, cucumber, cream cheese, соус унаги, кунжут"
+    },
+    price: 56000,
+    portion: {
+      ru: "10шт в порции",
+      uz: "Porsiyada 10шт",
+      en: "10шт per portion"
+    },
+    tags: ["Запеченный","Угорь"],
+    popular: false,
+    preparationTime: 16,
+    image: "https://sushito.uz/img/zapugor.7a1868c8.png",
+    defaultPlaceholderType: "baked-roll"
+  },
+  {
+    id: "sushito-10-11",
+    categoryId: "rolls",
+    title: {
+      ru: "Запечённый с омлетом",
+      uz: "Omlet bilan pishirilgan roll",
+      en: "Baked Tamago Omelet Roll"
+    },
+    description: {
+      ru: "Рис, крабовый микс, омлет, творожный сыр, соус унаги, кунжут",
+      uz: "Guruch, крабовый микс, омлет, творожный pishloq, sous унаги, кунжут",
+      en: "Sushi rice, crab mix, омлет, cream cheese, соус унаги, кунжут"
+    },
+    price: 60000,
+    portion: {
+      ru: "10шт в порции",
+      uz: "Porsiyada 10шт",
+      en: "10шт per portion"
+    },
+    tags: ["Запеченный"],
+    popular: false,
+    preparationTime: 16,
+    image: "https://sushito.uz/img/zapomletom.02d7e659.png",
+    defaultPlaceholderType: "baked-roll"
+  },
+  {
+    id: "sushito-4-12",
+    categoryId: "rolls",
+    title: {
+      ru: "Запечённый калифорния",
+      uz: "Pishirilgan Kaliforniya",
+      en: "Baked California Roll"
+    },
+    description: {
+      ru: "Рис, крабовый микс, огурец, творожный сыр, кунжут, запеченная шапка",
+      uz: "Guruch, крабовый микс, bodring, творожный pishloq, кунжут, запеченная шапка",
+      en: "Sushi rice, crab mix, cucumber, cream cheese, кунжут, запеченная шапка"
+    },
+    price: 65000,
+    portion: {
+      ru: "10шт в порции",
+      uz: "Porsiyada 10шт",
+      en: "10шт per portion"
+    },
+    tags: ["Запеченный"],
+    popular: true,
+    preparationTime: 16,
+    image: "https://sushito.uz/img/zap-kalifornia.b315238e.png",
+    defaultPlaceholderType: "baked-roll"
+  },
+  {
+    id: "sushito-6-13",
+    categoryId: "rolls",
+    title: {
+      ru: "Чука Ролл",
+      uz: "Chuka Roll",
+      en: "Chuka Seaweed Roll"
+    },
+    description: {
+      ru: "Рис, нори, лосось, творожный сыр, огурец, чука (водоросли), ореховый соус, карамельный соус",
+      uz: "Guruch, нори, лосось, творожный pishloq, bodring, чука (водоросли), ореховый sous, карамельный sous",
+      en: "Sushi rice, нори, лосось, cream cheese, cucumber, чука (водоросли), ореховый соус, карамельный соус"
+    },
+    price: 69000,
+    portion: {
+      ru: "10шт в порции",
+      uz: "Porsiyada 10шт",
+      en: "10шт per portion"
+    },
+    tags: ["Классика"],
+    popular: true,
+    preparationTime: 12,
+    image: "https://sushito.uz/img/chuka.d79cbc85.jpg",
+    defaultPlaceholderType: "classic-roll"
+  },
+  {
+    id: "sushito-4-14",
+    categoryId: "rolls",
+    title: {
+      ru: "Калифорния в кунжуте",
+      uz: "Kunjutli Kaliforniya",
+      en: "Sesame California Roll"
+    },
+    description: {
+      ru: "Рис, фирменная жареная курица, огурец, творожный сыр, кунжут",
+      uz: "Guruch, фирменная жареная tovuq, bodring, творожный pishloq, кунжут",
+      en: "Sushi rice, фирменная жареная курица, cucumber, cream cheese, кунжут"
+    },
+    price: 55000,
+    portion: {
+      ru: "10шт в порции",
+      uz: "Porsiyada 10шт",
+      en: "10шт per portion"
+    },
+    tags: ["Калифорния"],
+    popular: false,
+    preparationTime: 12,
+    image: "https://sushito.uz/img/kalifornia-kunjut.45db3f87.jpg",
+    defaultPlaceholderType: "classic-roll"
+  },
+  {
+    id: "sushito-5-15",
+    categoryId: "rolls",
+    title: {
+      ru: "Калифорния с угрём",
+      uz: "Ilonbaliqli Kaliforniya",
+      en: "California with Eel"
+    },
+    description: {
+      ru: "Рис, угорь, огурец, соус унаги, кунжут",
+      uz: "Guruch, ilonbaliq, bodring, sous унаги, кунжут",
+      en: "Sushi rice, eel, cucumber, соус унаги, кунжут"
+    },
+    price: 65000,
+    portion: {
+      ru: "10шт в порции",
+      uz: "Porsiyada 10шт",
+      en: "10шт per portion"
+    },
+    tags: ["Калифорния","Угорь"],
+    popular: false,
+    preparationTime: 12,
+    image: "https://sushito.uz/img/kalifornia-ugor.9b46d341.jpg",
+    defaultPlaceholderType: "classic-roll"
+  },
+  {
+    id: "sushito-7-16",
+    categoryId: "rolls",
+    title: {
+      ru: "Калифорния классик",
+      uz: "Klassik Kaliforniya",
+      en: "California Classic"
+    },
+    description: {
+      ru: "Рис, крабовый микс, огурец, икра масаго, творожный сыр",
+      uz: "Guruch, крабовый микс, bodring, икра масаго, творожный pishloq",
+      en: "Sushi rice, crab mix, cucumber, икра масаго, cream cheese"
+    },
+    price: 63000,
+    portion: {
+      ru: "10шт в порции",
+      uz: "Porsiyada 10шт",
+      en: "10шт per portion"
+    },
+    tags: ["Калифорния"],
+    popular: true,
+    preparationTime: 12,
+    image: "https://sushito.uz/img/kalifornia-klassik.3f1f950c.png",
+    defaultPlaceholderType: "classic-roll"
+  },
+  {
+    id: "sushito-8-17",
+    categoryId: "rolls",
+    title: {
+      ru: "Сочи",
+      uz: "Sochi roll",
+      en: "Sochi Roll"
+    },
+    description: {
+      ru: "Рис, крабовый микс, огурец, творожный сыр, соус унаги, кунжут",
+      uz: "Guruch, крабовый микс, bodring, творожный pishloq, sous унаги, кунжут",
+      en: "Sushi rice, crab mix, cucumber, cream cheese, соус унаги, кунжут"
+    },
+    price: 65000,
+    portion: {
+      ru: "10шт в порции",
+      uz: "Porsiyada 10шт",
+      en: "10шт per portion"
+    },
+    tags: ["Классика"],
+    popular: false,
+    preparationTime: 12,
+    image: "https://sushito.uz/img/sochi.b8d26a71.jpg",
+    defaultPlaceholderType: "classic-roll"
+  },
+  {
+    id: "sushito-7-18",
+    categoryId: "rolls",
+    title: {
+      ru: "Калифорния с лососем",
+      uz: "Lososli Kaliforniya",
+      en: "California Salmon"
+    },
+    description: {
+      ru: "Рис, лосось,  огурец, икра масаго, творожный сыр",
+      uz: "Guruch, лосось,  bodring, икра масаго, творожный pishloq",
+      en: "Sushi rice, лосось,  cucumber, икра масаго, cream cheese"
+    },
+    price: 70000,
+    portion: {
+      ru: "10шт в порции",
+      uz: "Porsiyada 10шт",
+      en: "10шт per portion"
+    },
+    tags: ["Калифорния","Лосось"],
+    popular: true,
+    preparationTime: 12,
+    image: "https://sushito.uz/img/kaliforniaSalmon.8c7dec53.jpg",
+    defaultPlaceholderType: "classic-roll"
+  },
+  {
+    id: "sushito-23-19",
+    categoryId: "rolls",
+    title: {
+      ru: "Сэндвич цезарь ролл",
+      uz: "Sendvich Sezar roll",
+      en: "Sandwich Caesar Roll"
+    },
+    description: {
+      ru: "Рис, фирменная жареная курица, огурец, творожный сыр",
+      uz: "Guruch, фирменная жареная tovuq, bodring, творожный pishloq",
+      en: "Sushi rice, фирменная жареная курица, cucumber, cream cheese"
+    },
+    price: 65000,
+    portion: {
+      ru: "4шт в порции",
+      uz: "Porsiyada 4шт",
+      en: "4шт per portion"
+    },
+    tags: ["Классика"],
+    popular: false,
+    preparationTime: 12,
+    image: "https://sushito.uz/img/sendvich.ebd2429f.jpg",
+    defaultPlaceholderType: "classic-roll"
+  },
+  {
+    id: "sushito-15-20",
+    categoryId: "rolls",
+    title: {
+      ru: "Чикен темпура",
+      uz: "Tovuqli Tempura",
+      en: "Chicken Tempura Roll"
+    },
+    description: {
+      ru: "Рис, фирменная жареная курица, огурец, творожный сыр, соус унаги, кунжут",
+      uz: "Guruch, фирменная жареная tovuq, bodring, творожный pishloq, sous унаги, кунжут",
+      en: "Sushi rice, фирменная жареная курица, cucumber, cream cheese, соус унаги, кунжут"
+    },
+    price: 63000,
+    portion: {
+      ru: "10шт в порции",
+      uz: "Porsiyada 10шт",
+      en: "10шт per portion"
+    },
+    tags: ["Темпура","Горячий","Курица"],
+    popular: false,
+    preparationTime: 16,
+    image: "https://sushito.uz/img/chicken-tempura.a1793de8.jpg",
+    defaultPlaceholderType: "tempura-roll"
+  },
+  {
+    id: "sushito-6-21",
+    categoryId: "rolls",
+    title: {
+      ru: "Чикен Чука Темпура",
+      uz: "Tovuqli Chuka Tempura",
+      en: "Chicken Chuka Tempura"
+    },
+    description: {
+      ru: "Рис, нори, курица, творожный сыр, огурец, чука (водоросли), ореховый соус, карамельный соус",
+      uz: "Guruch, нори, tovuq, творожный pishloq, bodring, чука (водоросли), ореховый sous, карамельный sous",
+      en: "Sushi rice, нори, курица, cream cheese, cucumber, чука (водоросли), ореховый соус, карамельный соус"
+    },
+    price: 72000,
+    portion: {
+      ru: "10шт в порции",
+      uz: "Porsiyada 10шт",
+      en: "10шт per portion"
+    },
+    tags: ["Темпура","Горячий","Курица"],
+    popular: false,
+    preparationTime: 16,
+    image: "https://sushito.uz/img/chukaRollTempura.435efb85.jpeg",
+    defaultPlaceholderType: "tempura-roll"
+  },
+  {
+    id: "sushito-12-22",
+    categoryId: "rolls",
+    title: {
+      ru: "Сяке темпура",
+      uz: "Syake Tempura (Losos)",
+      en: "Shake Tempura Roll"
+    },
+    description: {
+      ru: "Рис, сёмга, огурец, творожный сыр, соус унаги, кунжут",
+      uz: "Guruch, syomga, bodring, творожный pishloq, sous унаги, кунжут",
+      en: "Sushi rice, salmon, cucumber, cream cheese, соус унаги, кунжут"
+    },
+    price: 70000,
+    portion: {
+      ru: "10шт в порции",
+      uz: "Porsiyada 10шт",
+      en: "10шт per portion"
+    },
+    tags: ["Темпура","Горячий","Лосось"],
+    popular: false,
+    preparationTime: 16,
+    image: "https://sushito.uz/img/syaki-tempura.b89207b9.jpg",
+    defaultPlaceholderType: "tempura-roll"
+  },
+  {
+    id: "sushito-13-23",
+    categoryId: "rolls",
+    title: {
+      ru: "Техас темпура",
+      uz: "Texas Tempura",
+      en: "Texas Tempura Roll"
+    },
+    description: {
+      ru: "Рис, сёмга, огурец, творожный сыр, соус унаги, кунжут",
+      uz: "Guruch, syomga, bodring, творожный pishloq, sous унаги, кунжут",
+      en: "Sushi rice, salmon, cucumber, cream cheese, соус унаги, кунжут"
+    },
+    price: 70000,
+    portion: {
+      ru: "10шт в порции",
+      uz: "Porsiyada 10шт",
+      en: "10шт per portion"
+    },
+    tags: ["Темпура","Горячий"],
+    popular: false,
+    preparationTime: 16,
+    image: "https://sushito.uz/img/texas.e905665d.jpg",
+    defaultPlaceholderType: "tempura-roll"
+  },
+  {
+    id: "sushito-14-24",
+    categoryId: "rolls",
+    title: {
+      ru: "Маями темпура",
+      uz: "Mayami Tempura",
+      en: "Miami Tempura Roll"
+    },
+    description: {
+      ru: "Рис, крабовый микс, огурец, творожный сыр, соус унаги, соус спайси, кунжут",
+      uz: "Guruch, крабовый микс, bodring, творожный pishloq, sous унаги, sous спайси, кунжут",
+      en: "Sushi rice, crab mix, cucumber, cream cheese, соус унаги, соус спайси, кунжут"
+    },
+    price: 70000,
+    portion: {
+      ru: "10шт в порции",
+      uz: "Porsiyada 10шт",
+      en: "10шт per portion"
+    },
+    tags: ["Темпура","Горячий"],
+    popular: false,
+    preparationTime: 16,
+    image: "https://sushito.uz/img/mayami.411559b5.jpg",
+    defaultPlaceholderType: "tempura-roll"
+  },
+  {
+    id: "sushito-16-25",
+    categoryId: "rolls",
+    title: {
+      ru: "Унаги темпура",
+      uz: "Unagi Tempura (Ilonbaliq)",
+      en: "Unagi Tempura Roll"
+    },
+    description: {
+      ru: "Рис, угорь, огурец, творожный сыр, соус унаги, кунжут",
+      uz: "Guruch, ilonbaliq, bodring, творожный pishloq, sous унаги, кунжут",
+      en: "Sushi rice, eel, cucumber, cream cheese, соус унаги, кунжут"
+    },
+    price: 77000,
+    portion: {
+      ru: "10шт в порции",
+      uz: "Porsiyada 10шт",
+      en: "10шт per portion"
+    },
+    tags: ["Темпура","Горячий","Угорь"],
+    popular: false,
+    preparationTime: 16,
+    image: "https://sushito.uz/img/syaki-tempura.b89207b9.jpg",
+    defaultPlaceholderType: "tempura-roll"
+  },
+  {
+    id: "sushito-18-26",
+    categoryId: "rolls",
+    title: {
+      ru: "Чикен чиз",
+      uz: "Chiken Chiz (Pishloqli)",
+      en: "Chicken Cheese Roll"
+    },
+    description: {
+      ru: "Рис, фирменная жареная курица, огурец, творожный сыр, сыр чеддер",
+      uz: "Guruch, фирменная жареная tovuq, bodring, творожный pishloq, pishloq чеддер",
+      en: "Sushi rice, фирменная жареная курица, cucumber, cream cheese, сыр чеддер"
+    },
+    price: 55000,
+    portion: {
+      ru: "10шт в порции",
+      uz: "Porsiyada 10шт",
+      en: "10шт per portion"
+    },
+    tags: ["Классика","Курица"],
+    popular: false,
+    preparationTime: 12,
+    image: "https://sushito.uz/img/chicken-chesse.c3c5ad17.jpg",
+    defaultPlaceholderType: "classic-roll"
+  },
+  {
+    id: "sushito-20-27",
+    categoryId: "rolls",
+    title: {
+      ru: "Чикен Чипс",
+      uz: "Chiken Chips",
+      en: "Chicken Chips Roll"
+    },
+    description: {
+      ru: "Рис, курица, огурец, творожный сыр, cпайси соус, унаги соус, икра масаго, картофельные стружки",
+      uz: "Guruch, tovuq, bodring, творожный pishloq, cпайси sous, унаги sous, икра масаго, картофельные стружки",
+      en: "Sushi rice, курица, cucumber, cream cheese, cпайси соус, унаги соус, икра масаго, картофельные стружки"
+    },
+    price: 85000,
+    portion: {
+      ru: "10шт в порции",
+      uz: "Porsiyada 10шт",
+      en: "10шт per portion"
+    },
+    tags: ["Классика","Курица"],
+    popular: false,
+    preparationTime: 12,
+    image: "https://sushito.uz/img/chips.85f57ab1.png",
+    defaultPlaceholderType: "classic-roll"
+  },
+  {
+    id: "sushito-20-28",
+    categoryId: "rolls",
+    title: {
+      ru: "Филадельфия",
+      uz: "Filadelfiya klassik",
+      en: "Philadelphia Classic"
+    },
+    description: {
+      ru: "Рис, сёмга, огурец, творожный сыр",
+      uz: "Guruch, syomga, bodring, творожный pishloq",
+      en: "Sushi rice, salmon, cucumber, cream cheese"
+    },
+    price: 80000,
+    portion: {
+      ru: "10шт в порции",
+      uz: "Porsiyada 10шт",
+      en: "10шт per portion"
+    },
+    tags: ["Филадельфия","Премиум"],
+    popular: true,
+    preparationTime: 12,
+    image: "https://sushito.uz/img/filla.d0beb911.png",
+    defaultPlaceholderType: "classic-roll"
+  },
+  {
+    id: "sushito-21-29",
+    categoryId: "rolls",
+    title: {
+      ru: "Филадельфия гриль",
+      uz: "Grilda pishirilgan Filadelfiya",
+      en: "Philadelphia Grill"
+    },
+    description: {
+      ru: "Рис, сёмга гриль, огурец, творожный сыр",
+      uz: "Guruch, syomga гриль, bodring, творожный pishloq",
+      en: "Sushi rice, salmon гриль, cucumber, cream cheese"
+    },
+    price: 85000,
+    portion: {
+      ru: "10шт в порции",
+      uz: "Porsiyada 10шт",
+      en: "10шт per portion"
+    },
+    tags: ["Филадельфия","Премиум"],
+    popular: false,
+    preparationTime: 12,
+    image: "https://sushito.uz/img/fila-gril.5e510412.png",
+    defaultPlaceholderType: "classic-roll"
+  },
+  {
+    id: "sushito-23-30",
+    categoryId: "rolls",
+    title: {
+      ru: "Филадельфия с угрём",
+      uz: "Ilonbaliqli Filadelfiya",
+      en: "Philadelphia with Eel"
+    },
+    description: {
+      ru: "Рис, сёмга, угорь, творожный сыр, огурец, соус унаги, кунжут",
+      uz: "Guruch, syomga, ilonbaliq, творожный pishloq, bodring, sous унаги, кунжут",
+      en: "Sushi rice, salmon, eel, cream cheese, cucumber, соус унаги, кунжут"
+    },
+    price: 85000,
+    portion: {
+      ru: "10шт в порции",
+      uz: "Porsiyada 10шт",
+      en: "10шт per portion"
+    },
+    tags: ["Филадельфия","Премиум","Угорь"],
+    popular: true,
+    preparationTime: 12,
+    image: "https://sushito.uz/img/philadelphia_unagi.aabef132.png",
+    defaultPlaceholderType: "classic-roll"
+  },
+  {
+    id: "sushito-22-31",
+    categoryId: "rolls",
+    title: {
+      ru: "Канада",
+      uz: "Kanada roll",
+      en: "Canada Roll"
+    },
+    description: {
+      ru: "Рис, сёмга, угорь, огурец, творожный сыр, соус унаги, кунжут",
+      uz: "Guruch, syomga, ilonbaliq, bodring, творожный pishloq, sous унаги, кунжут",
+      en: "Sushi rice, salmon, eel, cucumber, cream cheese, соус унаги, кунжут"
+    },
+    price: 90000,
+    portion: {
+      ru: "10шт в порции",
+      uz: "Porsiyada 10шт",
+      en: "10шт per portion"
+    },
+    tags: ["Классика"],
+    popular: true,
+    preparationTime: 12,
+    image: "https://sushito.uz/img/kanada.c33a374b.jpg",
+    defaultPlaceholderType: "classic-roll"
+  },
+  {
+    id: "sushito-21-32",
+    categoryId: "rolls",
+    title: {
+      ru: "Карамельная филадельфия",
+      uz: "Karamelli Filadelfiya",
+      en: "Caramel Philadelphia"
+    },
+    description: {
+      ru: "Рис, сёмга, творожный сыр, карамельный соус, грецкий орех, унаги соус",
+      uz: "Guruch, syomga, творожный pishloq, карамельный sous, грецкий орех, унаги sous",
+      en: "Sushi rice, salmon, cream cheese, карамельный соус, грецкий орех, унаги соус"
+    },
+    price: 95000,
+    portion: {
+      ru: "10шт в порции",
+      uz: "Porsiyada 10шт",
+      en: "10шт per portion"
+    },
+    tags: ["Филадельфия","Премиум"],
+    popular: false,
+    preparationTime: 12,
+    image: "https://sushito.uz/img/karamel.1a0542bb.jpg",
+    defaultPlaceholderType: "classic-roll"
+  },
+  {
+    id: "sushito-19-33",
+    categoryId: "rolls",
+    title: {
+      ru: "Филадельфия люкс",
+      uz: "Filadelfiya Lyuks",
+      en: "Philadelphia Luxe"
+    },
+    description: {
+      ru: "Рис, сёмга, огурец, творожный сыр, сырная шапка, масаго",
+      uz: "Guruch, syomga, bodring, творожный pishloq, pishloqная шапка, масаго",
+      en: "Sushi rice, salmon, cucumber, cream cheese, сырная шапка, масаго"
+    },
+    price: 95000,
+    portion: {
+      ru: "10шт в порции",
+      uz: "Porsiyada 10шт",
+      en: "10шт per portion"
+    },
+    tags: ["Филадельфия","Премиум"],
+    popular: true,
+    preparationTime: 12,
+    image: "https://sushito.uz/img/fila-lyuks.9e5ffb66.png",
+    defaultPlaceholderType: "classic-roll"
+  },
+
   // ===================== CHUCHVARALAR =====================
   {
     id: 'chuchvara-alfredo',

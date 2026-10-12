@@ -17,6 +17,8 @@ export const DishImageCanvas: React.FC<DishImageCanvasProps> = ({
   portion,
   className = '',
 }) => {
+  const [hasError, setHasError] = React.useState(false);
+
   const preset = CULINARY_PRESETS[placeholderType] || {
     bgGradient: 'from-[#3A141A] via-[#2A0E13] to-[#1A080B]',
     accentColor: '#E5C07B',
@@ -30,12 +32,14 @@ export const DishImageCanvas: React.FC<DishImageCanvasProps> = ({
     <div
       className={`relative w-full h-48 md:h-52 overflow-hidden select-none bg-gradient-to-br ${preset.bgGradient} ${className}`}
     >
-      {image ? (
+      {image && !hasError ? (
         /* Display photo */
         <div className="relative w-full h-full">
           <img
             src={image}
             alt={dishTitle}
+            onError={() => setHasError(true)}
+            loading="lazy"
             className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
           />
           {/* Bottom contrast scrim */}
