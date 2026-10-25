@@ -49,12 +49,16 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <header className="sticky top-0 z-40 w-full bg-[#180A0D]/95 backdrop-blur-md border-b border-[#3D1A21] px-4 md:px-8 py-3.5 transition-colors">
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-8">
-        {/* Zone 1: Brand Zone - Single line wordmark */}
+        {/* Zone 1: Brand Zone - Logo & wordmark */}
         <a
           href="#top"
-          className="font-cinzel text-xl md:text-2xl font-bold tracking-[0.2em] text-[#F5EBE1] hover:text-[#D4AF37] transition-colors whitespace-nowrap shrink-0 flex items-center gap-2"
+          className="font-cinzel text-xl md:text-2xl font-bold tracking-[0.2em] text-[#F5EBE1] hover:text-[#D4AF37] transition-colors whitespace-nowrap shrink-0 flex items-center gap-2.5"
         >
-          <span className="w-2 h-2 rotate-45 bg-[#D4AF37]" />
+          <img
+            src="/magnolia-logo.png"
+            alt="Magnolia"
+            className="w-9 h-9 md:w-10 md:h-10 object-contain rounded-full shadow-md border border-[#D4AF37]/50"
+          />
           <span>MAGNOLIA</span>
         </a>
 

@@ -13,8 +13,12 @@ export const Footer: React.FC<FooterProps> = ({ currentLanguage }) => {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         {/* Brand */}
         <div className="flex flex-col items-center md:items-start space-y-1 text-center md:text-left">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rotate-45 bg-[#D4AF37]" />
+          <div className="flex items-center gap-2.5">
+            <img
+              src="/magnolia-logo.png"
+              alt="Magnolia"
+              className="w-7 h-7 object-contain rounded-full border border-[#D4AF37]/50"
+            />
             <span className="font-cinzel text-lg font-bold tracking-[0.2em] text-[#FAF5EE]">
               {RESTAURANT_INFO.name}
             </span>

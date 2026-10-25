@@ -1444,7 +1444,7 @@ export const MENU_ITEMS: Dish[] = [
 
 export const RESTAURANT_INFO = {
   name: 'MAGNOLIA',
-  subname: 'PAN ASIAN & TURKISH KITCHEN',
+  subname: 'CAFÉ & RESTAURANT',
   tagline: 'BREAKFAST • LUNCH • DINNER',
   workHours: {
     ru: 'Каждый день: 08:00 – 23:00',
