@@ -162,6 +162,7 @@ export const MENU_ITEMS: Dish[] = [
     popular: true,
     preparationTime: 15,
     calories: 520,
+    image: '/dishes/chuchvara-alfredo.jpg',
     defaultPlaceholderType: 'chuchvara-alfredo'
   },
   {
