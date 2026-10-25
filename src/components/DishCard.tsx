@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, ChevronRight } from 'lucide-react';
+import { Heart, ChevronRight, Edit3, Trash2 } from 'lucide-react';
 import { Dish, Language } from '../types/menu';
 import { DishImageCanvas } from './DishImageCanvas';
 
@@ -9,6 +9,9 @@ interface DishCardProps {
   onOpenDetails: (dish: Dish) => void;
   isFavorite: boolean;
   onToggleFavorite: (dishId: string) => void;
+  isAdminMode?: boolean;
+  onEditDish?: (dish: Dish) => void;
+  onDeleteDish?: (dishId: string) => void;
 }
 
 export const DishCard: React.FC<DishCardProps> = ({
@@ -17,13 +20,24 @@ export const DishCard: React.FC<DishCardProps> = ({
   onOpenDetails,
   isFavorite,
   onToggleFavorite,
+  isAdminMode = false,
+  onEditDish,
+  onDeleteDish,
 }) => {
   const formattedPrice = dish.price.toLocaleString('ru-RU');
 
   return (
     <article
-      onClick={() => onOpenDetails(dish)}
-      className="group relative flex flex-col justify-between bg-[#200B0F] hover:bg-[#270E13] border border-[#441720] hover:border-[#8C3340] rounded-2xl overflow-hidden transition-all duration-200 cursor-pointer shadow-md hover:shadow-2xl hover:-translate-y-1"
+      onClick={() => {
+        if (isAdminMode && onEditDish) {
+          onEditDish(dish);
+        } else {
+          onOpenDetails(dish);
+        }
+      }}
+      className={`group relative flex flex-col justify-between bg-[#200B0F] hover:bg-[#270E13] border ${
+        isAdminMode ? 'border-[#D4AF37]/60 ring-1 ring-[#D4AF37]/30' : 'border-[#441720] hover:border-[#8C3340]'
+      } rounded-2xl overflow-hidden transition-all duration-200 cursor-pointer shadow-md hover:shadow-2xl hover:-translate-y-1`}
     >
       {/* 1. Visual Dish Photo Canvas / Image */}
       <div className="relative">
@@ -34,6 +48,37 @@ export const DishCard: React.FC<DishCardProps> = ({
           dishTitle={dish.title[currentLanguage]}
           portion={dish.portion[currentLanguage]}
         />
+
+        {/* Admin Quick Action Controls on top */}
+        {isAdminMode && (
+          <div className="absolute top-3 left-3 z-30 flex items-center gap-1.5">
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                onEditDish?.(dish);
+              }}
+              className="px-2.5 py-1 rounded-lg bg-[#D4AF37] text-black font-semibold text-xs flex items-center gap-1 shadow-lg hover:bg-[#F4D185] transition-colors"
+              title="Narx va ma'lumotlarni tahrirlash"
+            >
+              <Edit3 className="w-3 h-3" />
+              <span>Tahrirlash</span>
+            </button>
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                if (confirm(currentLanguage === 'uz' ? `"${dish.title[currentLanguage]}" taomini menyudan o'chirmoqchimisiz?` : `Удалить блюдо "${dish.title[currentLanguage]}"?`)) {
+                  onDeleteDish?.(dish.id);
+                }
+              }}
+              className="p-1.5 rounded-lg bg-red-600 hover:bg-red-700 text-white shadow-lg transition-colors"
+              title="Menyudan o'chirish"
+            >
+              <Trash2 className="w-3.5 h-3.5" />
+            </button>
+          </div>
+        )}
 
         {/* Favorite button on Top Right of Image */}
         <div className="absolute top-3 right-3 z-20">

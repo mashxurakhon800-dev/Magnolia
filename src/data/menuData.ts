@@ -543,22 +543,24 @@ export const MENU_ITEMS: Dish[] = [
     title: {
       ru: 'Пирожок (картошка и мясо)',
       uz: "Pirojok (kartoshka va biqin go'shti)",
-      en: 'Crispy Pastry (Potato & Flank Beef)'
+      en: 'Pirojok (Flank Beef & Golden Potatoes)'
     },
     description: {
-      ru: 'Золотистый хрустящий пирожок из тонкого теста с начинкой из говяжьей вырезки и картофеля.',
-      uz: "Tilla rang qarsildoq pishiriq, ichida pishirilgan yumshoq biqin go'shti va kartoshka pyuresi.",
-      en: 'Crispy pastry filled with tender flank beef and whipped potatoes.'
+      ru: 'Сочный обжаренный стейк из говядины (бикин) с запеченными золотистыми дольками картофеля, сладкой кукурузой и острым перцем.',
+      uz: "Shirali qovurilgan mol go'shti (biqin lahm), tilla rang pishirilgan kartoshka bo'laklari, shirin makkajo'xori va qalampir bilan.",
+      en: 'Succulent roasted beef flank steak served with golden browned potatoes, sweet corn cob, and chili pepper.'
     },
-    price: 26000,
+    price: 58000,
     portion: {
-      ru: '2 шт в порции',
-      uz: '2 dona porsiyada',
-      en: '2 pcs per serving'
+      ru: '1 порция (350 г)',
+      uz: '1 porsiya (350 g)',
+      en: '1 portion (350 g)'
     },
-    tags: ['Выпечка', 'Горячая закуска'],
-    preparationTime: 8,
-    calories: 440,
+    tags: ['Фирменное', 'Сытное', 'Горячее блюдо'],
+    popular: true,
+    preparationTime: 18,
+    calories: 620,
+    image: '/dishes/pirojok-kartoshka-gosht.jpg',
     defaultPlaceholderType: 'pirojok'
   },
 

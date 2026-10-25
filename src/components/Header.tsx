@@ -1,17 +1,21 @@
 import React from 'react';
-import { Tablet } from 'lucide-react';
+import { Tablet, Settings } from 'lucide-react';
 import { Language } from '../types/menu';
 
 interface HeaderProps {
   currentLanguage: Language;
   onLanguageChange: (lang: Language) => void;
   onOpenInstall?: () => void;
+  isAdminMode?: boolean;
+  onToggleAdminMode?: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
   currentLanguage,
   onLanguageChange,
   onOpenInstall,
+  isAdminMode = false,
+  onToggleAdminMode,
 }) => {
   const navText = {
     ru: {
@@ -118,6 +122,26 @@ export const Header: React.FC<HeaderProps> = ({
             >
               <Tablet className="w-3.5 h-3.5 text-[#F4D185]" />
               <span className="hidden sm:inline">На планшет</span>
+            </button>
+          )}
+
+          {onToggleAdminMode && (
+            <button
+              onClick={onToggleAdminMode}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition-all shadow-sm active:scale-95 border ${
+                isAdminMode
+                  ? 'bg-[#D4AF37] text-black border-[#FFE082] shadow-[#D4AF37]/30 ring-2 ring-[#D4AF37]/50'
+                  : 'bg-[#2E1015] hover:bg-[#45161F] text-[#FAF5EE] border-[#66202C]'
+              }`}
+              title="Narxlarni almashtirish va ovqatlarni o'chirish / tahrirlash (Admin)"
+            >
+              <Settings className={`w-3.5 h-3.5 ${isAdminMode ? 'animate-spin-slow' : 'text-[#D4AF37]'}`} />
+              <span className="hidden sm:inline">
+                {isAdminMode 
+                  ? (currentLanguage === 'uz' ? 'Tahrirlash rejimi' : 'Режим правки') 
+                  : (currentLanguage === 'uz' ? 'Boshqaruv' : 'Управление')
+                }
+              </span>
             </button>
           )}
 
