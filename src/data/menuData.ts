@@ -355,6 +355,7 @@ export const MENU_ITEMS: Dish[] = [
     popular: true,
     preparationTime: 15,
     calories: 590,
+    image: '/dishes/qovurma-assorti.jpg',
     defaultPlaceholderType: 'fried-dumplings'
   },
 
@@ -457,6 +458,7 @@ export const MENU_ITEMS: Dish[] = [
     popular: true,
     preparationTime: 10,
     calories: 490,
+    image: '/dishes/shorva.jpg',
     defaultPlaceholderType: 'soup-shorva'
   },
   {
