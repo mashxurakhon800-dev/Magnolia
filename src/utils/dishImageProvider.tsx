@@ -8,6 +8,24 @@ export interface CulinaryVisual {
 }
 
 export const CULINARY_PRESETS: Record<string, CulinaryVisual> = {
+  // Salads
+  'caesar-salad': {
+    bgGradient: 'from-[#1B3624] via-[#122418] to-[#0A140E]',
+    accentColor: '#A5D6A7',
+    plateColor: '#1A3326',
+    garnishEmoji: '🥗',
+    badgeLabel: 'Салат Цезарь',
+    ambientLight: 'rgba(165, 214, 167, 0.3)',
+  },
+  'fresh-salad': {
+    bgGradient: 'from-[#1A3322] via-[#102116] to-[#08120C]',
+    accentColor: '#81C784',
+    plateColor: '#1C3825',
+    garnishEmoji: '🥗',
+    badgeLabel: 'Свежий салат',
+    ambientLight: 'rgba(129, 199, 132, 0.3)',
+  },
+
   // Chuchvara
   'chuchvara-alfredo': {
     bgGradient: 'from-[#44161F] via-[#300E15] to-[#1A060A]',

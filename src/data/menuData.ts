@@ -16,6 +16,20 @@ export const CATEGORIES: Category[] = [
     }
   },
   {
+    id: 'salads',
+    name: {
+      ru: 'Салаты',
+      uz: 'Salatlar',
+      en: 'Salads'
+    },
+    iconName: 'Salad',
+    description: {
+      ru: 'Свежие овощные и фирменные мясные салаты',
+      uz: "Yangi sabzavotli va maxsus go'shtli salatlar",
+      en: 'Fresh garden and signature gourmet salads'
+    }
+  },
+  {
     id: 'chuchvara',
     name: {
       ru: 'Чучвара',
@@ -88,6 +102,84 @@ export const CATEGORIES: Category[] = [
 ];
 
 export const MENU_ITEMS: Dish[] = [
+  // ===================== SALATLAR (SALADS) =====================
+  {
+    id: 'caesar-salad',
+    categoryId: 'salads',
+    title: {
+      ru: 'Салат Цезарь с курицей',
+      uz: 'Tovuqli Tsezar salati',
+      en: 'Classic Chicken Caesar Salad'
+    },
+    description: {
+      ru: 'Хрустящие листья салата Романо, нежное куриное филе на гриле, золотистые чесночные сухарики, лепестки пармезана и классический соус Цезарь.',
+      uz: "Qarsildoq aysberg va romano barglari, grilda qovurilgan tovuq filesi, sarimsoqli qarsildoq suxariklar, parmezan pishlog'i va klassik Tsezar sousi.",
+      en: 'Crisp romaine lettuce, tender grilled chicken breast, golden garlic croutons, shaved aged parmesan, and traditional creamy Caesar dressing.'
+    },
+    price: 46000,
+    portion: {
+      ru: '1 порция (260 г)',
+      uz: '1 porsiya (260 g)',
+      en: '1 portion (260 g)'
+    },
+    tags: ['Фирменное', 'Популярное', 'Гриль'],
+    popular: true,
+    preparationTime: 10,
+    calories: 380,
+    image: '/dishes/caesar-salad.jpg',
+    defaultPlaceholderType: 'caesar-salad'
+  },
+  {
+    id: 'greek-salad',
+    categoryId: 'salads',
+    title: {
+      ru: 'Греческий салат',
+      uz: 'Yunoncha salat',
+      en: 'Greek Salad'
+    },
+    description: {
+      ru: 'Спелые томаты, сочные огурцы, болгарский перец, сыр Фета, маслины Каламата, красный лук и оливковое масло первого отжима с орегано.',
+      uz: "Yetilgan pomidor, yangi bodring, shirin bulg'or qalampiri, Feta pishlog'i, zaytun mevalari va zaytun moyi.",
+      en: 'Vine-ripened tomatoes, crisp cucumbers, bell peppers, feta cheese, Kalamata olives, red onion, and extra virgin olive oil.'
+    },
+    price: 42000,
+    portion: {
+      ru: '1 порция (250 г)',
+      uz: '1 porsiya (250 g)',
+      en: '1 portion (250 g)'
+    },
+    tags: ['Свежее', 'Вегетарианское'],
+    popular: true,
+    preparationTime: 8,
+    calories: 290,
+    defaultPlaceholderType: 'fresh-salad'
+  },
+  {
+    id: 'achichuk-salad',
+    categoryId: 'salads',
+    title: {
+      ru: 'Салат Ачичук',
+      uz: 'Achchiq-chuchuk',
+      en: 'Achichuk Tomato Salad'
+    },
+    description: {
+      ru: 'Тонко нарезанные спелые сладкие томаты, репчатый лук, острый перчик чили и свежий базилик — классика к горячим блюдам.',
+      uz: "Yupqa parrak qilib to'g'ralgan shirin pomidor, piyoz, achchiq qalampir va rayhon barglari.",
+      en: 'Paper-thin sliced sweet tomatoes, sweet onions, spicy chili, and purple basil.'
+    },
+    price: 24000,
+    portion: {
+      ru: '1 порция (200 г)',
+      uz: '1 porsiya (200 g)',
+      en: '1 portion (200 g)'
+    },
+    tags: ['Традиция', 'Свежее'],
+    popular: false,
+    preparationTime: 5,
+    calories: 120,
+    defaultPlaceholderType: 'fresh-salad'
+  },
+
   // ===================== CHUCHVARALAR =====================
   {
     id: 'chuchvara-carbonara',
@@ -213,6 +305,7 @@ export const MENU_ITEMS: Dish[] = [
     tags: ['Вегетарианское', 'Свежая зелень'],
     preparationTime: 12,
     calories: 340,
+    image: '/dishes/kok-chuchvara.jpg',
     defaultPlaceholderType: 'chuchvara-alfredo'
   },
   {

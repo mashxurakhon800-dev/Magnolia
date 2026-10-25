@@ -6,7 +6,8 @@ import {
   CookingPot, 
   Flame, 
   Sparkles, 
-  CupSoda 
+  CupSoda,
+  Salad 
 } from 'lucide-react';
 import { CategoryId, Language } from '../types/menu';
 import { CATEGORIES } from '../data/menuData';
@@ -20,6 +21,7 @@ interface CategoryNavProps {
 
 const ICONS: Record<string, React.FC<{ className?: string }>> = {
   UtensilsCrossed,
+  Salad,
   Soup,
   CircleDot,
   CookingPot,

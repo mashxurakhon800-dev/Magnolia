@@ -16,10 +16,12 @@ import {
   CookingPot, 
   Flame, 
   Sparkles, 
-  CupSoda 
+  CupSoda,
+  Salad 
 } from 'lucide-react';
 
 const CATEGORY_SECTION_ICONS: Record<string, React.FC<{ className?: string }>> = {
+  salads: Salad,
   chuchvara: Soup,
   manti: CircleDot,
   soups: CookingPot,
@@ -117,6 +119,7 @@ export default function App() {
   const categoryCounts = useMemo(() => {
     const counts: Record<CategoryId, number> = {
       all: MENU_ITEMS.length,
+      salads: 0,
       chuchvara: 0,
       manti: 0,
       soups: 0,

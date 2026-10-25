@@ -8,6 +8,7 @@ export interface LocalizedText {
 
 export type CategoryId = 
   | 'all'
+  | 'salads'
   | 'chuchvara'
   | 'manti'
   | 'soups'

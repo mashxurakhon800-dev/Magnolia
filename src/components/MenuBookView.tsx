@@ -18,6 +18,7 @@ export const MenuBookView: React.FC<MenuBookViewProps> = ({
   const [activeSheet, setActiveSheet] = useState<'traditional' | 'drinks'>('traditional');
 
   // Exact dishes categorized
+  const salads = dishes.filter((d) => d.categoryId === 'salads');
   const chuchvara = dishes.filter((d) => d.categoryId === 'chuchvara');
   const manti = dishes.filter((d) => d.categoryId === 'manti');
   const soups = dishes.filter((d) => d.categoryId === 'soups');
@@ -113,6 +114,21 @@ export const MenuBookView: React.FC<MenuBookViewProps> = ({
         {/* Sheet 1: Traditional Card (Exact matching Image 1) */}
         {activeSheet === 'traditional' && (
           <div className="relative z-10 mt-8 space-y-8 max-w-2xl mx-auto">
+            {/* SALATLAR */}
+            {salads.length > 0 && (
+              <div>
+                <div className="text-center mb-4">
+                  <h3 className="font-cinzel text-lg md:text-xl font-bold tracking-[0.25em] text-[#FFE8C2] uppercase">
+                    Salatlar
+                  </h3>
+                  <div className="w-16 h-[1px] bg-[#F2DEB9]/60 mx-auto mt-1" />
+                </div>
+                <div className="space-y-1">
+                  {salads.map((dish) => renderDishRow(dish))}
+                </div>
+              </div>
+            )}
+
             {/* CHUCHVARALAR */}
             <div>
               <div className="text-center mb-4">
