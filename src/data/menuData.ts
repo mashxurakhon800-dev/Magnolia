@@ -188,6 +188,7 @@ export const MENU_ITEMS: Dish[] = [
     popular: true,
     preparationTime: 18,
     calories: 560,
+    image: '/dishes/chuchvara-bolognese.jpg',
     defaultPlaceholderType: 'chuchvara-bolognese'
   },
   {
