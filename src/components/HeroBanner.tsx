@@ -22,25 +22,25 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
 }) => {
   const content = {
     ru: {
-      searchPlaceholder: 'Поиск блюд (роллы, филадельфия, чучвара, манты, супы...)...',
+      searchPlaceholder: 'Поиск блюд (чучвара, манты, карбонара, рамен, супы...)...',
       openStatus: 'Часы работы: 08:00 – 23:00',
       viewCards: 'Витрина с фото',
       viewBook: 'Печатное меню',
-      welcome: 'Добро пожаловать в Magnolia: роллы и суши Sushito, фирменная домашняя чучвара, сочные манты и восточные блюда.',
+      welcome: 'Добро пожаловать в Magnolia: фирменная домашняя чучвара, сочные манты, горячие супы и аппетитные вторые блюда.',
     },
     uz: {
-      searchPlaceholder: 'Taomlarni qidirish (rollar, filadelfiya, chuchvara, manti...)...',
+      searchPlaceholder: 'Taomlarni qidirish (chuchvara, manti, karbonara, ramen, sho\'rva...)...',
       openStatus: 'Ish vaqti: 08:00 – 23:00',
       viewCards: 'Foto-vitrina',
       viewBook: 'Asl menyu varag\'i',
-      welcome: 'Magnolia ga xush kelibsiz: Sushito rollari va sushilari, mazali xonaki chuchvara va to\'yimli taomlar.',
+      welcome: 'Magnolia ga xush kelibsiz: nozik xonaki chuchvara, mazali manti, qaynoq sho\'rvalar va to\'yimli taomlar.',
     },
     en: {
-      searchPlaceholder: 'Search dishes (rolls, philadelphia, dumplings, manti, soups...)...',
+      searchPlaceholder: 'Search dishes (chuchvara, manti, carbonara, ramen, soups...)...',
       openStatus: 'Working hours: 08:00 – 23:00',
       viewCards: 'Photo Cards',
       viewBook: 'Menu Card',
-      welcome: 'Welcome to Magnolia: Sushito sushi rolls, handmade chuchvara dumplings and rich culinary classics.',
+      welcome: 'Welcome to Magnolia: artisanal handmade chuchvara dumplings, succulent manti, rich soups, and hearty classics.',
     },
   }[currentLanguage];
 

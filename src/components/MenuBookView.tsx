@@ -15,10 +15,9 @@ export const MenuBookView: React.FC<MenuBookViewProps> = ({
   currentLanguage,
   onOpenDetails,
 }) => {
-  const [activeSheet, setActiveSheet] = useState<'rolls' | 'traditional' | 'drinks'>('rolls');
+  const [activeSheet, setActiveSheet] = useState<'traditional' | 'drinks'>('traditional');
 
   // Exact dishes categorized
-  const rolls = dishes.filter((d) => d.categoryId === 'rolls');
   const chuchvara = dishes.filter((d) => d.categoryId === 'chuchvara');
   const manti = dishes.filter((d) => d.categoryId === 'manti');
   const soups = dishes.filter((d) => d.categoryId === 'soups');
@@ -27,19 +26,16 @@ export const MenuBookView: React.FC<MenuBookViewProps> = ({
 
   const sheetTabs = {
     ru: [
-      { id: 'rolls', label: 'Лист 1: 🍣 Роллы и суши (Sushito)' },
-      { id: 'traditional', label: 'Лист 2: Традиционная кухня' },
-      { id: 'drinks', label: 'Лист 3: Напитки (NAPITKI)' },
+      { id: 'traditional', label: 'Лист 1: Традиционная кухня' },
+      { id: 'drinks', label: 'Лист 2: Напитки (NAPITKI)' },
     ],
     uz: [
-      { id: 'rolls', label: '1-Varaq: 🍣 Rollar va sushi' },
-      { id: 'traditional', label: '2-Varaq: Milliy oshxona' },
-      { id: 'drinks', label: '3-Varaq: Napitki' },
+      { id: 'traditional', label: '1-Varaq: Milliy oshxona' },
+      { id: 'drinks', label: '2-Varaq: Napitki' },
     ],
     en: [
-      { id: 'rolls', label: 'Sheet 1: 🍣 Rolls & Sushi' },
-      { id: 'traditional', label: 'Sheet 2: Traditional Kitchen' },
-      { id: 'drinks', label: 'Sheet 3: Beverages (NAPITKI)' },
+      { id: 'traditional', label: 'Sheet 1: Traditional Kitchen' },
+      { id: 'drinks', label: 'Sheet 2: Beverages (NAPITKI)' },
     ],
   }[currentLanguage];
 
@@ -114,26 +110,7 @@ export const MenuBookView: React.FC<MenuBookViewProps> = ({
           <MagnoliaLogo size="md" variant="light" showSubtitle={true} />
         </div>
 
-        {/* Sheet 1: Rolls & Sushi (Sushito) */}
-        {activeSheet === 'rolls' && (
-          <div className="relative z-10 mt-6 space-y-6 max-w-4xl mx-auto">
-            <div className="text-center mb-6">
-              <h3 className="font-cinzel text-xl md:text-2xl font-bold tracking-[0.25em] text-[#FFE8C2] uppercase">
-                {currentLanguage === 'ru' ? 'Роллы и суши Sushito' : currentLanguage === 'uz' ? 'Sushito Rollari va Sushi' : 'Sushito Rolls & Sushi'}
-              </h3>
-              <p className="text-xs text-[#E5D7C7]/80 mt-1">
-                {currentLanguage === 'ru' ? '33 вида роллов: классические маки, запеченные, темпура и филадельфия' : currentLanguage === 'uz' ? '33 turdagi rollar: maki, pishirilgan, tempura va filadelfiya' : '33 varieties: classic maki, baked, tempura and philadelphia'}
-              </p>
-              <div className="w-24 h-[1px] bg-[#F2DEB9]/60 mx-auto mt-2" />
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1.5">
-              {rolls.map((dish) => renderDishRow(dish))}
-            </div>
-          </div>
-        )}
-
-        {/* Sheet 2: Traditional Card (Exact matching Image 1) */}
+        {/* Sheet 1: Traditional Card (Exact matching Image 1) */}
         {activeSheet === 'traditional' && (
           <div className="relative z-10 mt-8 space-y-8 max-w-2xl mx-auto">
             {/* CHUCHVARALAR */}
