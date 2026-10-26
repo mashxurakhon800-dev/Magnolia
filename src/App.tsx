@@ -46,7 +46,7 @@ export default function App() {
   // Dynamic dishes state with localStorage persistence
   const [dishes, setDishes] = useState<Dish[]>(() => {
     try {
-      const saved = localStorage.getItem('magnolia_custom_menu_v5');
+      const saved = localStorage.getItem('magnolia_custom_menu_v6');
       if (saved) {
         const parsed = JSON.parse(saved);
         if (Array.isArray(parsed) && parsed.length > 0) return parsed;
@@ -181,7 +181,7 @@ export default function App() {
         ? prev.map((d) => (d.id === updatedDish.id ? updatedDish : d))
         : [updatedDish, ...prev];
       try {
-        localStorage.setItem('magnolia_custom_menu_v5', JSON.stringify(next));
+        localStorage.setItem('magnolia_custom_menu_v6', JSON.stringify(next));
       } catch (e) {
         console.error(e);
       }
@@ -193,7 +193,7 @@ export default function App() {
     setDishes((prev) => {
       const next = prev.filter((d) => d.id !== dishId);
       try {
-        localStorage.setItem('magnolia_custom_menu_v5', JSON.stringify(next));
+        localStorage.setItem('magnolia_custom_menu_v6', JSON.stringify(next));
       } catch (e) {
         console.error(e);
       }
@@ -203,7 +203,7 @@ export default function App() {
 
   const handleResetToDefault = () => {
     if (confirm(currentLanguage === 'uz' ? "Barcha taomlar va narxlarni asl holatiga qaytarishni xohlaysizmi?" : "Сбросить меню к исходному состоянию?")) {
-      localStorage.removeItem('magnolia_custom_menu_v5');
+      localStorage.removeItem('magnolia_custom_menu_v6');
       setDishes(MENU_ITEMS);
     }
   };

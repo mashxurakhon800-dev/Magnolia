@@ -617,21 +617,21 @@ export const MENU_ITEMS: Dish[] = [
     tags: ['Чай', 'С лимоном', 'Горячее'],
     popular: true,
     calories: 15,
-    image: '/dishes/drinks/teapot.jpg',
+    image: '/dishes/drinks/teapot-blue.jpg',
     defaultPlaceholderType: 'tea-green'
   },
   {
     id: 'chortoq-premium',
     categoryId: 'drinks',
     title: {
-      ru: 'Chortoq Premium (стекло)',
-      uz: 'Chortoq Premium (shisha)',
-      en: 'Chortoq Premium (Glass Bottle)'
+      ru: 'Chortoq Premium (синее стекло)',
+      uz: 'Chortoq Premium (koʻk shisha)',
+      en: 'Chortoq Premium (Blue Glass)'
     },
     description: {
-      ru: 'Природная лечебно-столовая минеральная вода Chortoq в элегантной стеклянной бутылке 0.33 л.',
-      uz: 'Nafis shisha butilkada tortiladigan tabiiy mineral davolovchi Chortoq suvi 0.33 l.',
-      en: 'Natural mineral spring water Chortoq in an elegant 0.33 L designer glass bottle.'
+      ru: 'Природная лечебно-столовая минеральная вода Chortoq в элегантной синей стеклянной бутылке 0.33 л.',
+      uz: 'Nafis koʻk rangli shisha butilkada tortiladigan tabiiy mineral davolovchi Chortoq suvi 0.33 l.',
+      en: 'Natural mineral spring water Chortoq in an elegant blue designer glass bottle 0.33 L.'
     },
     price: 12000,
     portion: {
@@ -644,6 +644,155 @@ export const MENU_ITEMS: Dish[] = [
     calories: 0,
     image: '/dishes/drinks/chortoq-premium.jpg',
     defaultPlaceholderType: 'bonaqua'
+  },
+  {
+    id: 'chortoq-mineral-glass',
+    categoryId: 'drinks',
+    title: {
+      ru: 'Chortoq минеральная (зеленое стекло)',
+      uz: 'Chortoq tabiiy mineral suv (yashil shisha)',
+      en: 'Chortoq Spring Mineral Water (Green Glass)'
+    },
+    description: {
+      ru: 'Легендарная природная гидрокарбонатно-натриевая лечебно-столовая минеральная вода Chortoq в зеленой стеклянной бутылке 0.33 л.',
+      uz: 'Mashhur shifobaxsh tabiiy Chortoq mineral suvi, yashil shisha butilkada 0.33 l.',
+      en: 'Iconic natural medicinal table mineral water Chortoq in green glass bottle 0.33 L.'
+    },
+    price: 10000,
+    portion: {
+      ru: '0.33 л (стекло)',
+      uz: '0.33 l (shisha)',
+      en: '0.33 L (glass)'
+    },
+    tags: ['Минеральная вода', 'Стекло', 'Природная'],
+    popular: true,
+    calories: 0,
+    image: '/dishes/drinks/chortoq-green-glass.jpg',
+    defaultPlaceholderType: 'bonaqua'
+  },
+  {
+    id: 'chortoq-basilik-rayhon',
+    categoryId: 'drinks',
+    title: {
+      ru: 'Chortoq Василик-Райхон (стекло)',
+      uz: 'Chortoq Rayhon (shisha)',
+      en: 'Chortoq Basil-Rayhon (Glass Bottle)'
+    },
+    description: {
+      ru: 'Освежающая природная минеральная вода Chortoq с натуральным ароматом горного базилика (райхона) без сахара, 0.33 л в стекле.',
+      uz: "Tog' rayhoni (basilik) ta'mli shakarsiz tabiiy shifobaxsh Chortoq mineral suvi, 0.33 l shisha idishda.",
+      en: 'Sugar-free natural mineral water Chortoq infused with mountain basil (rayhon) flavor, 0.33 L in a glass bottle.'
+    },
+    price: 12000,
+    portion: {
+      ru: '0.33 л (стекло)',
+      uz: '0.33 l (shisha)',
+      en: '0.33 L (glass)'
+    },
+    tags: ['Минеральная вода', 'Райхон', 'Без сахара', 'Премиум'],
+    popular: true,
+    calories: 0,
+    image: '/dishes/drinks/chortoq-rayhon-033.jpg',
+    defaultPlaceholderType: 'bonaqua'
+  },
+  {
+    id: 'chortoq-mineral-05',
+    categoryId: 'drinks',
+    title: {
+      ru: 'Chortoq минеральная 0.5 л',
+      uz: 'Chortoq mineral suv 0.5l',
+      en: 'Chortoq Mineral Water 0.5L'
+    },
+    description: {
+      ru: 'Природная газированная минеральная вода Chortoq из чистейших горных источников.',
+      uz: "Toza tog' manbalaridan olingan gazlangan tabiiy Chortoq mineral suvi 0.5 litr.",
+      en: 'Pure mountain spring sparkling mineral water Chortoq 0.5 Liter.'
+    },
+    price: 7000,
+    portion: {
+      ru: '0.5 л',
+      uz: '0.5 l',
+      en: '0.5 L'
+    },
+    tags: ['Минеральная вода', '0.5L'],
+    calories: 0,
+    image: '/dishes/drinks/chortoq-mineral-05.jpg',
+    defaultPlaceholderType: 'bonaqua'
+  },
+  {
+    id: 'chortoq-juice-apple',
+    categoryId: 'drinks',
+    title: {
+      ru: 'Сок Chortoq Premium Яблоко 1 л',
+      uz: 'Chortoq Premium Olma sharbati 1l',
+      en: 'Chortoq Premium Apple Juice 1L'
+    },
+    description: {
+      ru: '100% натуральный яблочный сок Chortoq Premium прямого отжима из спелых отборных яблок.',
+      uz: 'Yetilgan saralangan olmadan tayyorlangan 100% tabiiy Chortoq Premium olma sharbati 1 litr.',
+      en: '100% all-natural premium apple juice Chortoq 1.0 Liter.'
+    },
+    price: 24000,
+    portion: {
+      ru: '1.0 л (тетрапак)',
+      uz: '1.0 l (tetrapak)',
+      en: '1.0 L (tetra pak)'
+    },
+    tags: ['Сок 100%', '1.0L', 'Премиум', 'Хит'],
+    popular: true,
+    calories: 120,
+    image: '/dishes/drinks/chortoq-olma-1l.jpg',
+    defaultPlaceholderType: 'bonaqua'
+  },
+  {
+    id: 'chortoq-juice-orange',
+    categoryId: 'drinks',
+    title: {
+      ru: 'Сок Chortoq Premium Апельсин 1 л',
+      uz: 'Chortoq Premium Apelsin sharbati 1l',
+      en: 'Chortoq Premium Orange Juice 1L'
+    },
+    description: {
+      ru: 'Бодрящий, богатый витамином C натуральный апельсиновый сок Chortoq Premium 1 л.',
+      uz: 'C vitaminiga boy quyoshli saralangan apelsinlardan tabiiy Chortoq Premium sharbati 1 litr.',
+      en: 'Vitamin C rich natural orange juice Chortoq Premium 1.0 Liter.'
+    },
+    price: 24000,
+    portion: {
+      ru: '1.0 л (тетрапак)',
+      uz: '1.0 l (tetrapak)',
+      en: '1.0 L (tetra pak)'
+    },
+    tags: ['Сок 100%', '1.0L', 'Премиум', 'Хит'],
+    popular: true,
+    calories: 115,
+    image: '/dishes/drinks/chortoq-apelsin-1l.jpg',
+    defaultPlaceholderType: 'fanta'
+  },
+  {
+    id: 'chortoq-juice-pomegranate-cherry',
+    categoryId: 'drinks',
+    title: {
+      ru: 'Сок Chortoq Premium Гранат-Вишня 1 л',
+      uz: 'Chortoq Premium Anor-Olcha sharbati 1l',
+      en: 'Chortoq Premium Pomegranate & Cherry 1L'
+    },
+    description: {
+      ru: 'Насыщенный рубиновый сок из сочного граната и спелой садовой вишни Chortoq Premium 1 л.',
+      uz: "To'q yoqut rangli xushxo'r anor va yetilgan gilos-olcha mevalaridan tayyorlangan Chortoq Premium sharbati 1 litr.",
+      en: 'Deep ruby rich juice blend of tart pomegranate and sweet cherries Chortoq Premium 1.0 Liter.'
+    },
+    price: 26000,
+    portion: {
+      ru: '1.0 л (тетрапак)',
+      uz: '1.0 l (tetrapak)',
+      en: '1.0 L (tetra pak)'
+    },
+    tags: ['Сок 100%', '1.0L', 'Премиум', 'Хит'],
+    popular: true,
+    calories: 130,
+    image: '/dishes/drinks/chortoq-anor-olcha-1l.jpg',
+    defaultPlaceholderType: 'coca-cola'
   },
   {
     id: 'bonaqua-1l',
