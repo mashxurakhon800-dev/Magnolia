@@ -8,8 +8,10 @@ import { MenuBookView } from './components/MenuBookView';
 import { PWAInstallModal } from './components/PWAInstallModal';
 import { Footer } from './components/Footer';
 import { MENU_ITEMS, CATEGORIES } from './data/menuData';
-import { Dish, CategoryId, Language } from './types/menu';
+import { Dish, CategoryId, Language, CartItem } from './types/menu';
 import { AdminMenuEditorModal } from './components/AdminMenuEditorModal';
+import { CartModal } from './components/CartModal';
+import { FloatingCartBar } from './components/FloatingCartBar';
 import { 
   Search, 
   Soup, 
@@ -81,6 +83,75 @@ export default function App() {
       return [];
     }
   });
+
+  // Cart & Order State for Guests and Waiters
+  const [cartItems, setCartItems] = useState<CartItem[]>(() => {
+    try {
+      const saved = localStorage.getItem('magnolia_cart_order');
+      return saved ? JSON.parse(saved) : [];
+    } catch {
+      return [];
+    }
+  });
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('magnolia_cart_order', JSON.stringify(cartItems));
+    } catch {}
+  }, [cartItems]);
+
+  const handleAddToCart = (dish: Dish, quantity = 1) => {
+    setCartItems((prev) => {
+      const existing = prev.find((item) => item.dish.id === dish.id);
+      if (existing) {
+        return prev.map((item) =>
+          item.dish.id === dish.id
+            ? { ...item, quantity: item.quantity + quantity }
+            : item
+        );
+      }
+      return [...prev, { dish, quantity }];
+    });
+  };
+
+  const handleUpdateCartQuantity = (dishId: string, delta: number) => {
+    setCartItems((prev) => {
+      return prev
+        .map((item) => {
+          if (item.dish.id === dishId) {
+            const newQty = item.quantity + delta;
+            return newQty > 0 ? { ...item, quantity: newQty } : null;
+          }
+          return item;
+        })
+        .filter(Boolean) as CartItem[];
+    });
+  };
+
+  const handleRemoveCartItem = (dishId: string) => {
+    setCartItems((prev) => prev.filter((item) => item.dish.id !== dishId));
+  };
+
+  const handleClearCart = () => {
+    setCartItems([]);
+  };
+
+  const cartMap = useMemo(() => {
+    const map: Record<string, number> = {};
+    cartItems.forEach((item) => {
+      map[item.dish.id] = item.quantity;
+    });
+    return map;
+  }, [cartItems]);
+
+  const cartTotalCount = useMemo(() => {
+    return cartItems.reduce((sum, item) => sum + item.quantity, 0);
+  }, [cartItems]);
+
+  const cartTotalSum = useMemo(() => {
+    return cartItems.reduce((sum, item) => sum + item.dish.price * item.quantity, 0);
+  }, [cartItems]);
 
   // Dietary filter tag
   const [activeFilterTag, setActiveFilterTag] = useState<string | null>(null);
@@ -243,6 +314,8 @@ export default function App() {
         onOpenInstall={() => setIsInstallModalOpen(true)}
         isAdminMode={isAdminMode}
         onToggleAdminMode={() => setIsAdminMode(!isAdminMode)}
+        cartCount={cartTotalCount}
+        onOpenCart={() => setIsCartOpen(true)}
       />
 
       {/* Admin Mode Management Bar */}
@@ -428,6 +501,9 @@ export default function App() {
                               setIsEditorOpen(true);
                             }}
                             onDeleteDish={handleDeleteDish}
+                            cartQuantity={cartMap[dish.id] || 0}
+                            onAddToCart={handleAddToCart}
+                            onUpdateCartQuantity={handleUpdateCartQuantity}
                           />
                         );
                       })}
@@ -448,6 +524,8 @@ export default function App() {
         currentLanguage={currentLanguage}
         isFavorite={selectedDishForDetails ? favorites.includes(selectedDishForDetails.id) : false}
         onToggleFavorite={handleToggleFavorite}
+        onAddToCart={handleAddToCart}
+        cartQuantity={selectedDishForDetails ? (cartMap[selectedDishForDetails.id] || 0) : 0}
       />
 
       {/* PWA Tablet Install Modal */}
@@ -467,6 +545,25 @@ export default function App() {
         dishToEdit={dishToEdit}
         onSaveDish={handleSaveDish}
         onDeleteDish={handleDeleteDish}
+        currentLanguage={currentLanguage}
+      />
+
+      {/* Guest & Waiter Cart / Order Modal */}
+      <CartModal
+        isOpen={isCartOpen}
+        onClose={() => setIsCartOpen(false)}
+        items={cartItems}
+        onUpdateQuantity={handleUpdateCartQuantity}
+        onRemoveItem={handleRemoveCartItem}
+        onClearCart={handleClearCart}
+        currentLanguage={currentLanguage}
+      />
+
+      {/* Floating Cart Bar (Bottom action) */}
+      <FloatingCartBar
+        totalCount={cartTotalCount}
+        totalSum={cartTotalSum}
+        onOpenCart={() => setIsCartOpen(true)}
         currentLanguage={currentLanguage}
       />
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, ChevronRight, Edit3, Trash2 } from 'lucide-react';
+import { Heart, ChevronRight, Edit3, Trash2, Plus, Minus, ShoppingBag } from 'lucide-react';
 import { Dish, Language } from '../types/menu';
 import { DishImageCanvas } from './DishImageCanvas';
 
@@ -12,6 +12,9 @@ interface DishCardProps {
   isAdminMode?: boolean;
   onEditDish?: (dish: Dish) => void;
   onDeleteDish?: (dishId: string) => void;
+  cartQuantity?: number;
+  onAddToCart?: (dish: Dish) => void;
+  onUpdateCartQuantity?: (dishId: string, delta: number) => void;
 }
 
 export const DishCard: React.FC<DishCardProps> = ({
@@ -23,6 +26,9 @@ export const DishCard: React.FC<DishCardProps> = ({
   isAdminMode = false,
   onEditDish,
   onDeleteDish,
+  cartQuantity = 0,
+  onAddToCart,
+  onUpdateCartQuantity,
 }) => {
   const formattedPrice = dish.price.toLocaleString('ru-RU');
 
@@ -133,12 +139,12 @@ export const DishCard: React.FC<DishCardProps> = ({
           </p>
         </div>
 
-        {/* Bottom Bar: Price & Details affordance */}
-        <div className="mt-4 pt-3 border-t border-[#38131B] flex items-center justify-between gap-3">
+        {/* Bottom Bar: Price & Order button */}
+        <div className="mt-4 pt-3 border-t border-[#38131B] flex items-center justify-between gap-2">
           {/* Price */}
           <div className="flex flex-col">
             <span className="text-[10px] text-[#8C756B] uppercase tracking-wider font-mono">
-              Стоимость
+              {currentLanguage === 'uz' ? 'Narxi' : 'Цена'}
             </span>
             <div className="flex items-baseline gap-1">
               <span className="font-mono font-bold text-base md:text-lg text-[#FAF5EE] tabular-nums">
@@ -150,11 +156,46 @@ export const DishCard: React.FC<DishCardProps> = ({
             </div>
           </div>
 
-          {/* Details CTA */}
-          <div className="flex items-center gap-1 text-xs font-medium text-[#D4AF37] group-hover:text-white transition-colors">
-            <span>Подробнее</span>
-            <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-          </div>
+          {/* Quick Cart Action Button */}
+          {cartQuantity > 0 ? (
+            <div 
+              onClick={(e) => e.stopPropagation()} 
+              className="flex items-center bg-[#3D141C] border border-[#D4AF37]/60 rounded-xl p-0.5 shadow-md"
+            >
+              <button
+                type="button"
+                onClick={() => onUpdateCartQuantity?.(dish.id, -1)}
+                className="w-7 h-7 rounded-lg flex items-center justify-center text-[#FAF5EE] hover:bg-white/10 active:scale-95 transition-all"
+                title="Kamaytirish"
+              >
+                <Minus className="w-3.5 h-3.5" />
+              </button>
+              <span className="w-6 text-center font-mono font-bold text-xs text-[#F4D185]">
+                {cartQuantity}
+              </span>
+              <button
+                type="button"
+                onClick={() => onUpdateCartQuantity?.(dish.id, 1)}
+                className="w-7 h-7 rounded-lg flex items-center justify-center text-[#FAF5EE] bg-[#8C2D38] hover:bg-[#A63D49] active:scale-95 transition-all shadow-sm"
+                title="Qo'shish"
+              >
+                <Plus className="w-3.5 h-3.5" />
+              </button>
+            </div>
+          ) : (
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                onAddToCart?.(dish);
+              }}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#8C2D38] hover:bg-[#A63D49] active:scale-95 text-white font-bold text-xs shadow-md border border-[#D4AF37]/40 transition-all"
+              title="Savatga qo'shish"
+            >
+              <Plus className="w-3.5 h-3.5 text-[#F4D185]" />
+              <span>{currentLanguage === 'uz' ? 'Qo\'shish' : 'В заказ'}</span>
+            </button>
+          )}
         </div>
       </div>
     </article>

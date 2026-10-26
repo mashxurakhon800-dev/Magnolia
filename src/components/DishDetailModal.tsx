@@ -10,6 +10,8 @@ interface DishDetailModalProps {
   currentLanguage: Language;
   isFavorite: boolean;
   onToggleFavorite: (dishId: string) => void;
+  onAddToCart?: (dish: Dish, quantity: number) => void;
+  cartQuantity?: number;
 }
 
 export const DishDetailModal: React.FC<DishDetailModalProps> = ({
@@ -19,7 +21,14 @@ export const DishDetailModal: React.FC<DishDetailModalProps> = ({
   currentLanguage,
   isFavorite,
   onToggleFavorite,
+  onAddToCart,
+  cartQuantity = 0,
 }) => {
+  const [modalQty, setModalQty] = React.useState(1);
+
+  React.useEffect(() => {
+    setModalQty(1);
+  }, [dish, isOpen]);
   if (!isOpen || !dish) return null;
 
   const labels = {
@@ -153,25 +162,55 @@ export const DishDetailModal: React.FC<DishDetailModalProps> = ({
         </div>
 
         {/* Modal Footer */}
-        <div className="p-4 md:p-6 bg-[#1A070A] border-t border-[#3D1219] flex items-center justify-between">
+        <div className="p-4 md:p-6 bg-[#1A070A] border-t border-[#3D1219] flex flex-wrap items-center justify-between gap-3">
           <div>
-            <span className="text-[11px] text-[#A89280] uppercase tracking-wider font-mono">
+            <span className="text-[11px] text-[#8C756B] uppercase tracking-wider font-mono">
               {labels.price}
             </span>
             <div className="flex items-baseline gap-1.5 mt-0.5">
               <span className="font-mono font-bold text-xl text-[#F4D185] tabular-nums">
-                {dish.price.toLocaleString('ru-RU')}
+                {(dish.price * modalQty).toLocaleString('ru-RU')}
               </span>
               <span className="text-xs text-[#D4AF37] font-semibold">UZS</span>
             </div>
           </div>
 
-          <button
-            onClick={onClose}
-            className="px-5 py-2.5 bg-[#6B2329] hover:bg-[#8C2D38] text-white text-xs font-semibold rounded-xl transition-all"
-          >
-            Закрыть
-          </button>
+          <div className="flex items-center gap-2.5">
+            {/* Quantity Selector */}
+            <div className="flex items-center bg-[#250C10] border border-[#521C26] rounded-xl p-0.5">
+              <button
+                type="button"
+                onClick={() => setModalQty(Math.max(1, modalQty - 1))}
+                className="w-8 h-8 rounded-lg flex items-center justify-center text-[#C7B7A3] hover:text-white hover:bg-white/10 active:scale-95 transition-all text-sm font-bold"
+              >
+                -
+              </button>
+              <span className="w-8 text-center font-mono font-bold text-sm text-[#FAF5EE]">
+                {modalQty}
+              </span>
+              <button
+                type="button"
+                onClick={() => setModalQty(modalQty + 1)}
+                className="w-8 h-8 rounded-lg flex items-center justify-center text-[#F4D185] hover:text-white hover:bg-white/10 active:scale-95 transition-all text-sm font-bold"
+              >
+                +
+              </button>
+            </div>
+
+            {/* Add to Order Button */}
+            <button
+              type="button"
+              onClick={() => {
+                onAddToCart?.(dish, modalQty);
+                onClose();
+              }}
+              className="px-5 py-2.5 bg-gradient-to-r from-[#8C2D38] to-[#B33939] hover:from-[#A63D49] hover:to-[#C94A4A] text-white text-xs font-bold rounded-xl shadow-lg transition-transform active:scale-95 flex items-center gap-1.5"
+            >
+              <span>
+                {currentLanguage === 'uz' ? `Buyurtmaga qo'shish (${modalQty})` : `В заказ (${modalQty})`}
+              </span>
+            </button>
+          </div>
         </div>
       </div>
     </div>

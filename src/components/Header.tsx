@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tablet, Settings } from 'lucide-react';
+import { Tablet, Settings, ShoppingBag } from 'lucide-react';
 import { Language } from '../types/menu';
 
 interface HeaderProps {
@@ -8,6 +8,8 @@ interface HeaderProps {
   onOpenInstall?: () => void;
   isAdminMode?: boolean;
   onToggleAdminMode?: () => void;
+  cartCount?: number;
+  onOpenCart?: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -16,6 +18,8 @@ export const Header: React.FC<HeaderProps> = ({
   onOpenInstall,
   isAdminMode = false,
   onToggleAdminMode,
+  cartCount = 0,
+  onOpenCart,
 }) => {
   const navText = {
     ru: {
@@ -142,6 +146,24 @@ export const Header: React.FC<HeaderProps> = ({
                   : (currentLanguage === 'uz' ? 'Boshqaruv' : 'Управление')
                 }
               </span>
+            </button>
+          )}
+
+          {onOpenCart && (
+            <button
+              onClick={onOpenCart}
+              className="relative flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#8C2D38] hover:bg-[#A63D49] text-white border border-[#D4AF37]/50 text-xs font-bold transition-all shadow-md active:scale-95"
+              title="Buyurtma savati / Корзина заказа"
+            >
+              <ShoppingBag className="w-3.5 h-3.5 text-[#F4D185]" />
+              <span className="hidden sm:inline">
+                {currentLanguage === 'uz' ? 'Buyurtma' : 'Заказ'}
+              </span>
+              {cartCount > 0 && (
+                <span className="bg-[#D4AF37] text-black font-mono font-bold text-[10px] px-1.5 py-0.2 rounded-full">
+                  {cartCount}
+                </span>
+              )}
             </button>
           )}
 

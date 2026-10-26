@@ -45,3 +45,9 @@ export interface Dish {
   image?: string; // photo URL or data URL
   defaultPlaceholderType: string; // key to stylized culinary visual
 }
+
+export interface CartItem {
+  dish: Dish;
+  quantity: number;
+  note?: string;
+}
