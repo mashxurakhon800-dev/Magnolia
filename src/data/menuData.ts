@@ -152,6 +152,7 @@ export const MENU_ITEMS: Dish[] = [
     popular: true,
     preparationTime: 8,
     calories: 290,
+    image: '/dishes/greek-salad.jpg',
     defaultPlaceholderType: 'fresh-salad'
   },
   {
@@ -437,6 +438,7 @@ export const MENU_ITEMS: Dish[] = [
     popular: true,
     preparationTime: 15,
     calories: 680,
+    image: '/dishes/katlet-bilan-kartoshka-fri.jpg',
     defaultPlaceholderType: 'cutlet-fries'
   },
   {
@@ -514,6 +516,7 @@ export const MENU_ITEMS: Dish[] = [
     tags: ['Чай', 'Горячее'],
     popular: true,
     calories: 2,
+    image: '/dishes/drinks/bardak-choy.jpg',
     defaultPlaceholderType: 'tea-bardak'
   },
   {
@@ -538,6 +541,7 @@ export const MENU_ITEMS: Dish[] = [
     tags: ['Чай', 'Традиция'],
     popular: true,
     calories: 2,
+    image: '/dishes/drinks/teapot.jpg',
     defaultPlaceholderType: 'tea-green'
   },
   {
@@ -562,7 +566,58 @@ export const MENU_ITEMS: Dish[] = [
     tags: ['Чай', 'Горячее'],
     popular: false,
     calories: 2,
+    image: '/dishes/drinks/teapot.jpg',
     defaultPlaceholderType: 'tea-black'
+  },
+  {
+    id: 'limon-choy',
+    categoryId: 'drinks',
+    title: {
+      ru: 'Чай с лимоном',
+      uz: 'Limonli choy',
+      en: 'Lemon Tea'
+    },
+    description: {
+      ru: 'Ароматный горячий чай со свежими сочными дольками лимона в чайнике.',
+      uz: "Yangi kesilgan nordon limon bo'laklari bilan damlangan xushbo'y issiq choy.",
+      en: 'Fragrant freshly brewed hot tea steeped with fresh lemon slices in a teapot.'
+    },
+    price: 10000,
+    portion: {
+      ru: '1 чайник (800 мл)',
+      uz: '1 choynak (800 ml)',
+      en: '1 teapot (800 ml)'
+    },
+    tags: ['Чай', 'С лимоном', 'Горячее'],
+    popular: true,
+    calories: 15,
+    image: '/dishes/drinks/teapot.jpg',
+    defaultPlaceholderType: 'tea-green'
+  },
+  {
+    id: 'chortoq-premium',
+    categoryId: 'drinks',
+    title: {
+      ru: 'Chortoq Premium (стекло)',
+      uz: 'Chortoq Premium (shisha)',
+      en: 'Chortoq Premium (Glass Bottle)'
+    },
+    description: {
+      ru: 'Природная лечебно-столовая минеральная вода Chortoq в элегантной стеклянной бутылке 0.33 л.',
+      uz: 'Nafis shisha butilkada tortiladigan tabiiy mineral davolovchi Chortoq suvi 0.33 l.',
+      en: 'Natural mineral spring water Chortoq in an elegant 0.33 L designer glass bottle.'
+    },
+    price: 12000,
+    portion: {
+      ru: '0.33 л (стекло)',
+      uz: '0.33 l (shisha)',
+      en: '0.33 L (glass)'
+    },
+    tags: ['Минеральная вода', 'Премиум', 'Стекло'],
+    popular: true,
+    calories: 0,
+    image: '/dishes/drinks/chortoq-premium.jpg',
+    defaultPlaceholderType: 'bonaqua'
   },
   {
     id: 'bonaqua-1l',
