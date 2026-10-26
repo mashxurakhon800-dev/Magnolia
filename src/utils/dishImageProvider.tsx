@@ -173,20 +173,52 @@ export const CULINARY_PRESETS: Record<string, CulinaryVisual> = {
   },
 
   // Drinks
+  'tea-bardak': {
+    bgGradient: 'from-[#3D1E0C] via-[#2A1306] to-[#140702]',
+    accentColor: '#F59E0B',
+    plateColor: '#241005',
+    garnishEmoji: '🫖',
+    badgeLabel: 'Бардак чой',
+    ambientLight: 'rgba(245, 158, 11, 0.3)',
+  },
+  'tea-green': {
+    bgGradient: 'from-[#1B3624] via-[#122418] to-[#0A140E]',
+    accentColor: '#84CC16',
+    plateColor: '#1A3326',
+    garnishEmoji: '🍵',
+    badgeLabel: "Ko'k choy",
+    ambientLight: 'rgba(132, 204, 22, 0.3)',
+  },
+  'tea-black': {
+    bgGradient: 'from-[#3A170C] via-[#260E06] to-[#120502]',
+    accentColor: '#F97316',
+    plateColor: '#220D06',
+    garnishEmoji: '🫖',
+    badgeLabel: 'Qora choy',
+    ambientLight: 'rgba(249, 115, 22, 0.3)',
+  },
   'coca-cola': {
     bgGradient: 'from-[#3D0A0E] via-[#280508] to-[#140203]',
     accentColor: '#E53935',
     plateColor: '#170608',
     garnishEmoji: '🥤',
-    badgeLabel: 'Охлажденное 0.5L / 1L',
+    badgeLabel: 'Coca-Cola',
     ambientLight: 'rgba(229, 57, 53, 0.3)',
+  },
+  'coca-cola-zero': {
+    bgGradient: 'from-[#1A1A1A] via-[#111111] to-[#0A0A0A]',
+    accentColor: '#EF4444',
+    plateColor: '#141414',
+    garnishEmoji: '🥤',
+    badgeLabel: 'Shakarsiz Zero',
+    ambientLight: 'rgba(239, 68, 68, 0.25)',
   },
   'fanta': {
     bgGradient: 'from-[#3E1A0A] via-[#291005] to-[#140702]',
     accentColor: '#FB8C00',
     plateColor: '#1E120A',
     garnishEmoji: '🍊',
-    badgeLabel: 'Апельсин 0.5L / 1L',
+    badgeLabel: 'Fanta',
     ambientLight: 'rgba(251, 140, 0, 0.3)',
   },
   'bonaqua': {
@@ -194,16 +226,8 @@ export const CULINARY_PRESETS: Record<string, CulinaryVisual> = {
     accentColor: '#4FC3F7',
     plateColor: '#0E1D28',
     garnishEmoji: '💧',
-    badgeLabel: 'Природная вода',
+    badgeLabel: 'Bonaqua',
     ambientLight: 'rgba(79, 195, 247, 0.25)',
-  },
-  'chortoq': {
-    bgGradient: 'from-[#122A2E] via-[#0B1B1E] to-[#050E0F]',
-    accentColor: '#4DB6AC',
-    plateColor: '#0F2226',
-    garnishEmoji: '✨',
-    badgeLabel: 'Лечебная в стекле',
-    ambientLight: 'rgba(77, 182, 172, 0.3)',
   },
 
   // Rolls & Sushi

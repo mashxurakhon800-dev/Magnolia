@@ -564,138 +564,264 @@ export const MENU_ITEMS: Dish[] = [
     defaultPlaceholderType: 'pirojok'
   },
 
-  // ===================== NAPITKI =====================
+  // ===================== NAPITKI (DRINKS) =====================
   {
-    id: 'coca-cola',
+    id: 'bardak-choy',
     categoryId: 'drinks',
     title: {
-      ru: 'Coca-Cola',
-      uz: 'Coca Cola',
-      en: 'Coca-Cola'
+      ru: 'Бардак чой',
+      uz: 'Bardak choy',
+      en: 'Turkish Bardak Tea'
     },
     description: {
-      ru: 'Классическая прохладная Coca-Cola, подается охлажденной со льдом.',
-      uz: 'Klassik muzdek Coca-Cola, muz bilan birga.',
-      en: 'Chilled classic Coca-Cola served with ice.'
+      ru: 'Традиционный ароматный чай в турецком стеклянном стаканчике (бардак).',
+      uz: "Armudu (bardak) stakanchada tortiladigan an'anaviy xushbo'y choy.",
+      en: 'Traditional aromatic tea served in an authentic Turkish glass (bardak).'
     },
-    price: 14000,
+    price: 5000,
     portion: {
-      ru: '0.5 л / 1 л',
-      uz: '0.5 l / 1 l',
-      en: '0.5 L / 1 L'
+      ru: '1 стакан (150 мл)',
+      uz: '1 stakan (150 ml)',
+      en: '1 glass (150 ml)'
     },
-    options: [
-      {
-        name: { ru: '0.5 Литра', uz: '0.5 Litr', en: '0.5 Liter' },
-        priceModifier: 0
-      },
-      {
-        name: { ru: '1.0 Литр', uz: '1.0 Litr', en: '1.0 Liter' },
-        priceModifier: 8000
-      }
-    ],
-    tags: ['Охлажденное', '0.5L / 1L'],
+    tags: ['Чай', 'Горячее'],
+    popular: true,
+    calories: 2,
+    defaultPlaceholderType: 'tea-bardak'
+  },
+  {
+    id: 'kok-choy',
+    categoryId: 'drinks',
+    title: {
+      ru: 'Зеленый чай',
+      uz: "Ko'k choy",
+      en: 'Green Tea'
+    },
+    description: {
+      ru: 'Классический свежезаваренный листовой зеленый чай №95 в фарфоровом чайнике.',
+      uz: "Chinnigul choynakda yangi damlangan nozik bargli ko'k choy.",
+      en: 'Freshly brewed aromatic loose-leaf green tea served in a teapot.'
+    },
+    price: 5000,
+    portion: {
+      ru: '1 чайник (800 мл)',
+      uz: '1 choynak (800 ml)',
+      en: '1 teapot (800 ml)'
+    },
+    tags: ['Чай', 'Традиция'],
+    popular: true,
+    calories: 2,
+    defaultPlaceholderType: 'tea-green'
+  },
+  {
+    id: 'qora-choy',
+    categoryId: 'drinks',
+    title: {
+      ru: 'Черный чай',
+      uz: 'Qora choy',
+      en: 'Black Tea'
+    },
+    description: {
+      ru: 'Насыщенный бархатистый свежезаваренный черный чай в чайнике.',
+      uz: "Chinnigul choynakda damlangan to'yimli va xushbo'y qora choy.",
+      en: 'Rich and bold freshly steeped black tea served in a traditional teapot.'
+    },
+    price: 8000,
+    portion: {
+      ru: '1 чайник (800 мл)',
+      uz: '1 choynak (800 ml)',
+      en: '1 teapot (800 ml)'
+    },
+    tags: ['Чай', 'Горячее'],
+    popular: false,
+    calories: 2,
+    defaultPlaceholderType: 'tea-black'
+  },
+  {
+    id: 'bonaqua-1l',
+    categoryId: 'drinks',
+    title: {
+      ru: 'Bonaqua 1 л',
+      uz: 'Bonaqua 1l',
+      en: 'Bonaqua 1L'
+    },
+    description: {
+      ru: 'Чистая природная питьевая вода Bonaqua.',
+      uz: 'Toza tabiiy ichimlik suvi Bonaqua 1 litr.',
+      en: 'Pure natural drinking water Bonaqua 1 Liter.'
+    },
+    price: 7250,
+    portion: {
+      ru: '1.0 л',
+      uz: '1.0 l',
+      en: '1.0 L'
+    },
+    tags: ['Вода', '1L'],
+    calories: 0,
+    defaultPlaceholderType: 'bonaqua'
+  },
+  {
+    id: 'bonaqua-15l',
+    categoryId: 'drinks',
+    title: {
+      ru: 'Bonaqua 1.5 л',
+      uz: 'Bonaqua 1.5l',
+      en: 'Bonaqua 1.5L'
+    },
+    description: {
+      ru: 'Природная освежающая питьевая вода Bonaqua в большой бутылке.',
+      uz: 'Bonaqua tabiiy ichimlik suvi katta hajmda (1.5 litr).',
+      en: 'Pure natural mineral drinking water Bonaqua (1.5 Liter).'
+    },
+    price: 9000,
+    portion: {
+      ru: '1.5 л',
+      uz: '1.5 l',
+      en: '1.5 L'
+    },
+    tags: ['Вода', '1.5L'],
+    calories: 0,
+    defaultPlaceholderType: 'bonaqua'
+  },
+  {
+    id: 'coca-cola-05',
+    categoryId: 'drinks',
+    title: {
+      ru: 'Coca-Cola 0.5 л',
+      uz: 'Coca cola 0.5l',
+      en: 'Coca-Cola 0.5L'
+    },
+    description: {
+      ru: 'Легендарная освежающая Coca-Cola, подается охлажденной со льдом.',
+      uz: 'Muzdek klassik Coca-Cola 0.5 litr.',
+      en: 'Chilled classic Coca-Cola 0.5 Liter.'
+    },
+    price: 8000,
+    portion: {
+      ru: '0.5 л',
+      uz: '0.5 l',
+      en: '0.5 L'
+    },
+    tags: ['Охлажденное', '0.5L'],
     popular: true,
     calories: 140,
     defaultPlaceholderType: 'coca-cola'
   },
   {
-    id: 'fanta',
+    id: 'coca-cola-1l',
     categoryId: 'drinks',
     title: {
-      ru: 'Fanta',
-      uz: 'Fanta',
-      en: 'Fanta'
+      ru: 'Coca-Cola 1 л',
+      uz: 'Coca cola 1l',
+      en: 'Coca-Cola 1L'
     },
     description: {
-      ru: 'Апельсиновый газированный напиток, подается охлажденным.',
-      uz: 'Shirali apelsinli gazlangan ichimlik, muz bilan birga.',
-      en: 'Crisp orange soda served chilled with ice.'
+      ru: 'Освежающая Coca-Cola в бутылке 1 л для компании.',
+      uz: 'Muzdek klassik Coca-Cola 1 litr butilka.',
+      en: 'Chilled classic Coca-Cola 1.0 Liter bottle.'
     },
-    price: 14000,
+    price: 13000,
     portion: {
-      ru: '0.5 л / 1 л',
-      uz: '0.5 l / 1 l',
-      en: '0.5 L / 1 L'
+      ru: '1.0 л',
+      uz: '1.0 l',
+      en: '1.0 L'
     },
-    options: [
-      {
-        name: { ru: '0.5 Литра', uz: '0.5 Litr', en: '0.5 Liter' },
-        priceModifier: 0
-      },
-      {
-        name: { ru: '1.0 Литр', uz: '1.0 Litr', en: '1.0 Liter' },
-        priceModifier: 8000
-      }
-    ],
-    tags: ['0.5L / 1L'],
+    tags: ['Охлажденное', '1.0L'],
+    popular: true,
+    calories: 280,
+    defaultPlaceholderType: 'coca-cola'
+  },
+  {
+    id: 'shakarsiz-coca-cola-05',
+    categoryId: 'drinks',
+    title: {
+      ru: 'Coca-Cola Zero 0.5 л',
+      uz: 'Shakarsiz coca cola 0.5',
+      en: 'Coca-Cola Zero 0.5L'
+    },
+    description: {
+      ru: 'Освежающая Coca-Cola без сахара и калорий.',
+      uz: 'Shakarsiz, kaloriyasiz parhezbop Coca-Cola 0.5 litr.',
+      en: 'Sugar-free, zero-calorie chilled Coca-Cola Zero 0.5 Liter.'
+    },
+    price: 8000,
+    portion: {
+      ru: '0.5 л',
+      uz: '0.5 l',
+      en: '0.5 L'
+    },
+    tags: ['Без сахара', '0.5L', 'Zero'],
+    calories: 0,
+    defaultPlaceholderType: 'coca-cola-zero'
+  },
+  {
+    id: 'shakarsiz-coca-cola-1l',
+    categoryId: 'drinks',
+    title: {
+      ru: 'Coca-Cola Zero 1 л',
+      uz: 'Shakarsiz coca cola 1l',
+      en: 'Coca-Cola Zero 1L'
+    },
+    description: {
+      ru: 'Освежающая Coca-Cola без сахара 1 л.',
+      uz: 'Shakarsiz, kaloriyasiz parhezbop Coca-Cola 1 litr.',
+      en: 'Sugar-free, zero-calorie Coca-Cola Zero 1.0 Liter bottle.'
+    },
+    price: 13000,
+    portion: {
+      ru: '1.0 л',
+      uz: '1.0 l',
+      en: '1.0 L'
+    },
+    tags: ['Без сахара', '1.0L', 'Zero'],
+    calories: 0,
+    defaultPlaceholderType: 'coca-cola-zero'
+  },
+  {
+    id: 'fanta-05',
+    categoryId: 'drinks',
+    title: {
+      ru: 'Fanta 0.5 л',
+      uz: 'Fanta 0.5',
+      en: 'Fanta 0.5L'
+    },
+    description: {
+      ru: 'Яркий искрящийся апельсиновый напиток Fanta 0.5 л.',
+      uz: 'Shirin apelsinli gazlangan muzdek Fanta 0.5 litr.',
+      en: 'Sparkling orange soda Fanta 0.5 Liter.'
+    },
+    price: 9000,
+    portion: {
+      ru: '0.5 л',
+      uz: '0.5 l',
+      en: '0.5 L'
+    },
+    tags: ['Апельсин', '0.5L'],
     calories: 150,
     defaultPlaceholderType: 'fanta'
   },
   {
-    id: 'bonaqua',
+    id: 'fanta-1l',
     categoryId: 'drinks',
     title: {
-      ru: 'Bonaqua',
-      uz: 'Bonaqua',
-      en: 'Bonaqua'
+      ru: 'Fanta 1 л',
+      uz: 'Fanta 1l',
+      en: 'Fanta 1L'
     },
     description: {
-      ru: 'Питьевая природная вода на выбор (без газа или с газом).',
-      uz: "Tabiiy ichimlik suvi (gazsiz yoki gazli tanlovingiz bo'yicha).",
-      en: 'Pure natural drinking water (still or sparkling).'
+      ru: 'Искрящийся апельсиновый напиток Fanta 1 л.',
+      uz: 'Shirin apelsinli gazlangan muzdek Fanta 1 litr butilka.',
+      en: 'Sparkling orange soda Fanta 1.0 Liter bottle.'
     },
-    price: 8000,
+    price: 13000,
     portion: {
-      ru: '0.5 л / 1 л',
-      uz: '0.5 l / 1 l',
-      en: '0.5 L / 1 L'
+      ru: '1.0 л',
+      uz: '1.0 l',
+      en: '1.0 L'
     },
-    options: [
-      {
-        name: { ru: '0.5 л (Без газа)', uz: '0.5 l (Gazsiz)', en: '0.5 L (Still)' },
-        priceModifier: 0
-      },
-      {
-        name: { ru: '1.0 л (Без газа)', uz: '1.0 l (Gazsiz)', en: '1.0 L (Still)' },
-        priceModifier: 5000
-      },
-      {
-        name: { ru: '0.5 л (С газом)', uz: '0.5 l (Gazli)', en: '0.5 L (Sparkling)' },
-        priceModifier: 0
-      },
-      {
-        name: { ru: '1.0 л (С газом)', uz: '1.0 l (Gazli)', en: '1.0 L (Sparkling)' },
-        priceModifier: 5000
-      }
-    ],
-    tags: ['Вода', '0.5L / 1L'],
-    calories: 0,
-    defaultPlaceholderType: 'bonaqua'
-  },
-  {
-    id: 'chortoq',
-    categoryId: 'drinks',
-    title: {
-      ru: 'Чорток (Chortoq)',
-      uz: 'Chortoq / Bezgaz',
-      en: 'Chortoq (Still)'
-    },
-    description: {
-      ru: 'Природная лечебная минеральная вода Чорток в стеклянной бутылке (без газа).',
-      uz: "Shifobaxsh tabiiy mineral suv Chortoq, shisha idishda (bezgaz).",
-      en: 'Therapeutic natural mineral water Chortoq in glass bottle (still).'
-    },
-    price: 15000,
-    portion: {
-      ru: 'Стекло (0.5 л)',
-      uz: 'Shisha (0.5 l)',
-      en: 'Glass (0.5 L)'
-    },
-    tags: ['Минеральная вода', 'Стекло'],
-    popular: true,
-    calories: 0,
-    defaultPlaceholderType: 'chortoq'
+    tags: ['Апельсин', '1.0L'],
+    calories: 300,
+    defaultPlaceholderType: 'fanta'
   }
 ];
 
