@@ -174,63 +174,14 @@ export const MENU_ITEMS: Dish[] = [
       en: '1 portion (200 g)'
     },
     tags: ['Традиция', 'Свежее'],
-    popular: false,
+    popular: true,
     preparationTime: 5,
     calories: 120,
+    image: '/dishes/achichuk.jpg',
     defaultPlaceholderType: 'fresh-salad'
   },
 
   // ===================== CHUCHVARALAR =====================
-  {
-    id: 'chuchvara-carbonara',
-    categoryId: 'chuchvara',
-    title: {
-      ru: 'Чучвара Карбонара',
-      uz: 'Chuchvara Karbonara',
-      en: 'Chuchvara Carbonara'
-    },
-    description: {
-      ru: 'Нежная домашняя чучвара с говядиной в бархатном соусе Карбонара с поджаренными кусочками мяса, яичным желтком, черным перцем и тертым пармезаном.',
-      uz: "Mayin xonaki chuchvara, quyuq baxmaldek Karbonara sousi, qovurilgan go'sht bo'lakchalari, tuxum sarig'i va parmezan pishlog'i bilan.",
-      en: 'Handmade beef dumplings tossed in a silky classic Carbonara sauce with crispy savory bits, egg yolk, freshly ground pepper, and parmesan.'
-    },
-    price: 49000,
-    portion: {
-      ru: '1 порция (290 г)',
-      uz: '1 porsiya (290 g)',
-      en: '1 portion (290 g)'
-    },
-    tags: ['Фирменное', 'Сливочный соус', 'Карбонара'],
-    popular: true,
-    preparationTime: 16,
-    calories: 540,
-    defaultPlaceholderType: 'chuchvara-carbonara'
-  },
-  {
-    id: 'chuchvara-ramen',
-    categoryId: 'chuchvara',
-    title: {
-      ru: 'Рамен с чучварой',
-      uz: 'Chuchvarali Ramen',
-      en: 'Chuchvara Ramen Soup'
-    },
-    description: {
-      ru: 'Авторский наваристый рамен: японский бульон со свежей пшеничной лапшой, домашней сочной чучварой из говядины, маринованным яйцом, водорослями нори и зеленым луком.',
-      uz: "Mualliflik to'yimli rameni: maxsus ramen bulyoni, yangi bug'doy lapshasi, mayin xonaki chuchvara, yarim qaynatilgan tuxum, nori va ko'k piyoz.",
-      en: 'Signature hearty ramen: rich savory broth with fresh ramen noodles, delicate beef dumplings (chuchvara), marinated soft egg, nori, and scallions.'
-    },
-    price: 52000,
-    portion: {
-      ru: '1 порция (450 мл)',
-      uz: '1 porsiya (450 ml)',
-      en: '1 portion (450 ml)'
-    },
-    tags: ['Фирменное', 'Рамен', 'Горячий суп'],
-    popular: true,
-    preparationTime: 15,
-    calories: 480,
-    defaultPlaceholderType: 'chuchvara-ramen'
-  },
   {
     id: 'chuchvara-alfredo',
     categoryId: 'chuchvara',
@@ -461,55 +412,6 @@ export const MENU_ITEMS: Dish[] = [
     image: '/dishes/shorva.jpg',
     defaultPlaceholderType: 'soup-shorva'
   },
-  {
-    id: 'ugra',
-    categoryId: 'soups',
-    title: {
-      ru: 'Угра',
-      uz: 'Ugra',
-      en: 'Ugra Noodle Soup'
-    },
-    description: {
-      ru: 'Тончайшая домашняя лапша в прозрачном мясном бульоне с фрикадельками и свежей зеленью.',
-      uz: "Qo'lda kesilgan nafis uy lapshasi, tiniq go'shtli sho'rva, mayda qiyma frikadelkalar va ko'katlar.",
-      en: 'Hand-rolled silk noodles simmered in aromatic golden meat broth with delicate meatballs.'
-    },
-    price: 43000,
-    portion: {
-      ru: '1 порция (380 мл)',
-      uz: '1 porsiya (380 ml)',
-      en: '1 portion (380 ml)'
-    },
-    tags: ['Домашнее', 'Нежное'],
-    preparationTime: 12,
-    calories: 420,
-    defaultPlaceholderType: 'soup-ugra'
-  },
-  {
-    id: 'ramen-chuchvara-soup',
-    categoryId: 'soups',
-    title: {
-      ru: 'Рамен с чучварой',
-      uz: 'Chuchvarali Ramen',
-      en: 'Chuchvara Ramen Soup'
-    },
-    description: {
-      ru: 'Ароматный густой бульон рамен с длинной лапшой, нежной чучварой с говядиной, яйцом, нори и кунжутом.',
-      uz: "To'yimli boy ramen bulyoni, uzundan-uzun lapsha, barra chuchvara, tuxum va nori bilan.",
-      en: 'Rich broth with ramen noodles, delicate beef dumplings, soft egg, nori seaweed, and sesame seeds.'
-    },
-    price: 52000,
-    portion: {
-      ru: '1 порция (450 мл)',
-      uz: '1 porsiya (450 ml)',
-      en: '1 portion (450 ml)'
-    },
-    tags: ['Рамен', 'Горячий суп', 'Фирменное'],
-    popular: true,
-    preparationTime: 15,
-    calories: 480,
-    defaultPlaceholderType: 'chuchvara-ramen'
-  },
 
   // ===================== QO'YIQ O'VQATLAR =====================
   {
@@ -536,6 +438,31 @@ export const MENU_ITEMS: Dish[] = [
     preparationTime: 15,
     calories: 680,
     defaultPlaceholderType: 'cutlet-fries'
+  },
+  {
+    id: 'kartoshka-fri',
+    categoryId: 'mains',
+    title: {
+      ru: 'Картофель фри',
+      uz: 'Kartoshka fri',
+      en: 'French Fries'
+    },
+    description: {
+      ru: 'Золотистый, хрустящий снаружи и нежный внутри горячий картофель фри с томатным соусом.',
+      uz: "Tilla rang, sirti qarsildoq, ichi mayin issiq kartoshka fri maxsus sous bilan.",
+      en: 'Golden crispy on the outside, tender on the inside hot french fries served with dipping sauce.'
+    },
+    price: 22000,
+    portion: {
+      ru: '1 порция (180 г)',
+      uz: '1 porsiya (180 g)',
+      en: '1 portion (180 g)'
+    },
+    tags: ['Хрустящее', 'Гарнир', 'Хит'],
+    popular: true,
+    preparationTime: 8,
+    calories: 380,
+    defaultPlaceholderType: 'french-fries'
   },
   {
     id: 'pirojok-kartoshka-gosht',

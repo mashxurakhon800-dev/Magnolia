@@ -113,6 +113,14 @@ export const CULINARY_PRESETS: Record<string, CulinaryVisual> = {
     badgeLabel: 'Сытное блюдо',
     ambientLight: 'rgba(244, 209, 133, 0.25)',
   },
+  'french-fries': {
+    bgGradient: 'from-[#3E230B] via-[#291605] to-[#140A02]',
+    accentColor: '#F59E0B',
+    plateColor: '#2B2A2E',
+    garnishEmoji: '🍟',
+    badgeLabel: 'Картофель фри',
+    ambientLight: 'rgba(245, 158, 11, 0.3)',
+  },
   'pirojok': {
     bgGradient: 'from-[#3A1813] via-[#28100D] to-[#160806]',
     accentColor: '#E76F51',
