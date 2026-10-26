@@ -288,25 +288,51 @@ export const MENU_ITEMS: Dish[] = [
     id: 'qovurma-assorti',
     categoryId: 'chuchvara',
     title: {
-      ru: 'Жареная чучвара (Ассорти)',
-      uz: 'Qovurma assorti',
-      en: 'Crispy Fried Dumplings Assorted'
+      ru: 'Жареная чучвара (Маленькое ассорти)',
+      uz: 'Qovurma assorti (Kichik)',
+      en: 'Crispy Fried Dumplings Assorted (Small)'
     },
     description: {
-      ru: 'Хрустящие обжаренные во фритюре пельмешки с двумя видами начинки, подаются с фирменным соусом.',
-      uz: "Qarsildoq qilib qovurilgan ikki xil nachinkali chuchvaralar to'plami, maxsus sous bilan.",
-      en: 'Golden crispy wok-fried mini dumplings served with house dipping sauce.'
+      ru: 'Хрустящие обжаренные во фритюре пельмешки с двумя видами начинки и фирменным соусом (маленькая порция — 15 шт).',
+      uz: "Qarsildoq qilib qovurilgan ikki xil nachinkali chuchvaralar to'plami, maxsus sous bilan (kichik porsiya — 15 dona).",
+      en: 'Golden crispy wok-fried mini dumplings served with house dipping sauce (small portion — 15 pcs).'
     },
     price: 45000,
     portion: {
-      ru: '1 порция (250 г)',
-      uz: '1 porsiya (250 g)',
-      en: '1 portion (250 g)'
+      ru: '15 шт (180 г)',
+      uz: '15 dona (180 g)',
+      en: '15 pcs (180 g)'
     },
-    tags: ['Хрустящее', 'Хит'],
+    tags: ['Хрустящее', 'Маленькая порция', 'Хит'],
     popular: true,
-    preparationTime: 15,
-    calories: 590,
+    preparationTime: 12,
+    calories: 540,
+    image: '/dishes/qovurma-assorti.jpg',
+    defaultPlaceholderType: 'fried-dumplings'
+  },
+  {
+    id: 'qovurma-assorti-katta',
+    categoryId: 'chuchvara',
+    title: {
+      ru: 'Жареная чучвара (Большое ассорти)',
+      uz: 'Qovurma assorti (Katta)',
+      en: 'Crispy Fried Dumplings Assorted (Large)'
+    },
+    description: {
+      ru: 'Большая тарелка хрустящих жареных пельмешек ассорти с фирменным томатным соусом на компанию (большая порция — 30 шт).',
+      uz: "Katta tovoqda qarsildoq qilib qovurilgan chuchvaralar assortisi, maxsus sous bilan (katta porsiya — 30 dona).",
+      en: 'Large platter of crispy golden fried dumplings with special dipping sauce for sharing (large portion — 30 pcs).'
+    },
+    price: 80000,
+    portion: {
+      ru: '30 шт (360 г)',
+      uz: '30 dona (360 g)',
+      en: '30 pcs (360 g)'
+    },
+    tags: ['Хрустящее', 'Большая порция', 'Хит'],
+    popular: true,
+    preparationTime: 18,
+    calories: 1080,
     image: '/dishes/qovurma-assorti.jpg',
     defaultPlaceholderType: 'fried-dumplings'
   },
@@ -666,6 +692,31 @@ export const MENU_ITEMS: Dish[] = [
     defaultPlaceholderType: 'bonaqua'
   },
   {
+    id: 'coca-cola-glass',
+    categoryId: 'drinks',
+    title: {
+      ru: 'Coca-Cola (стекло)',
+      uz: 'Coca-Cola (shisha)',
+      en: 'Coca-Cola (Glass Bottle)'
+    },
+    description: {
+      ru: 'Классическая ледяная Coca-Cola в винтажной стеклянной бутылке 0.25 л.',
+      uz: 'Muzdek klassik Coca-Cola maxsus shisha idishda 0.25 l.',
+      en: 'Ice-cold classic Coca-Cola in an authentic 0.25 L glass bottle.'
+    },
+    price: 10000,
+    portion: {
+      ru: '0.25 л (стекло)',
+      uz: '0.25 l (shisha)',
+      en: '0.25 L (glass)'
+    },
+    tags: ['Стекло', 'Охлажденное', 'Хит'],
+    popular: true,
+    calories: 105,
+    image: '/dishes/drinks/coca-cola-glass.jpg',
+    defaultPlaceholderType: 'coca-cola'
+  },
+  {
     id: 'coca-cola-05',
     categoryId: 'drinks',
     title: {
@@ -674,9 +725,9 @@ export const MENU_ITEMS: Dish[] = [
       en: 'Coca-Cola 0.5L'
     },
     description: {
-      ru: 'Легендарная освежающая Coca-Cola, подается охлажденной со льдом.',
-      uz: 'Muzdek klassik Coca-Cola 0.5 litr.',
-      en: 'Chilled classic Coca-Cola 0.5 Liter.'
+      ru: 'Легендарная освежающая Coca-Cola 0.5 л, подается охлажденной.',
+      uz: 'Muzdek klassik Coca-Cola 0.5 litr butilka.',
+      en: 'Chilled classic Coca-Cola 0.5 Liter bottle.'
     },
     price: 8000,
     portion: {
@@ -687,6 +738,7 @@ export const MENU_ITEMS: Dish[] = [
     tags: ['Охлажденное', '0.5L'],
     popular: true,
     calories: 140,
+    image: '/dishes/drinks/coca-cola-05.webp',
     defaultPlaceholderType: 'coca-cola'
   },
   {
@@ -698,7 +750,7 @@ export const MENU_ITEMS: Dish[] = [
       en: 'Coca-Cola 1L'
     },
     description: {
-      ru: 'Освежающая Coca-Cola в бутылке 1 л для компании.',
+      ru: 'Освежающая Coca-Cola в большой бутылке 1 л для компании.',
       uz: 'Muzdek klassik Coca-Cola 1 litr butilka.',
       en: 'Chilled classic Coca-Cola 1.0 Liter bottle.'
     },
@@ -711,7 +763,33 @@ export const MENU_ITEMS: Dish[] = [
     tags: ['Охлажденное', '1.0L'],
     popular: true,
     calories: 280,
+    image: '/dishes/drinks/coca-cola-1l.jpg',
     defaultPlaceholderType: 'coca-cola'
+  },
+  {
+    id: 'shakarsiz-coca-cola-glass',
+    categoryId: 'drinks',
+    title: {
+      ru: 'Coca-Cola Zero (стекло)',
+      uz: 'Shakarsiz Coca-Cola (shisha)',
+      en: 'Coca-Cola Zero (Glass Bottle)'
+    },
+    description: {
+      ru: 'Освежающая Coca-Cola Zero без сахара в элегантной стеклянной бутылке 0.25 л.',
+      uz: 'Shakarsiz parhezbop muzdek Coca-Cola shisha butilkada 0.25 l.',
+      en: 'Sugar-free crisp Coca-Cola Zero in a 0.25 L glass bottle.'
+    },
+    price: 10000,
+    portion: {
+      ru: '0.25 л (стекло)',
+      uz: '0.25 l (shisha)',
+      en: '0.25 L (glass)'
+    },
+    tags: ['Без сахара', 'Стекло', 'Zero'],
+    popular: true,
+    calories: 0,
+    image: '/dishes/drinks/coca-cola-zero-glass.jpeg',
+    defaultPlaceholderType: 'coca-cola-zero'
   },
   {
     id: 'shakarsiz-coca-cola-05',
@@ -722,7 +800,7 @@ export const MENU_ITEMS: Dish[] = [
       en: 'Coca-Cola Zero 0.5L'
     },
     description: {
-      ru: 'Освежающая Coca-Cola без сахара и калорий.',
+      ru: 'Освежающая Coca-Cola без сахара и калорий 0.5 л.',
       uz: 'Shakarsiz, kaloriyasiz parhezbop Coca-Cola 0.5 litr.',
       en: 'Sugar-free, zero-calorie chilled Coca-Cola Zero 0.5 Liter.'
     },
@@ -734,6 +812,7 @@ export const MENU_ITEMS: Dish[] = [
     },
     tags: ['Без сахара', '0.5L', 'Zero'],
     calories: 0,
+    image: '/dishes/drinks/coca-cola-zero-05.jpg',
     defaultPlaceholderType: 'coca-cola-zero'
   },
   {
@@ -757,7 +836,33 @@ export const MENU_ITEMS: Dish[] = [
     },
     tags: ['Без сахара', '1.0L', 'Zero'],
     calories: 0,
+    image: '/dishes/drinks/coca-cola-zero-1l.jpg',
     defaultPlaceholderType: 'coca-cola-zero'
+  },
+  {
+    id: 'fanta-glass',
+    categoryId: 'drinks',
+    title: {
+      ru: 'Fanta Апельсин (стекло)',
+      uz: 'Fanta (shisha)',
+      en: 'Fanta Orange (Glass Bottle)'
+    },
+    description: {
+      ru: 'Искрящаяся апельсиновая Fanta в оригинальной рельефной стеклянной бутылке 0.25 л.',
+      uz: 'Yorqin apelsinli muzdek gazlangan Fanta shisha idishda 0.25 l.',
+      en: 'Sparkling orange Fanta in an iconic contour glass bottle 0.25 L.'
+    },
+    price: 10000,
+    portion: {
+      ru: '0.25 л (стекло)',
+      uz: '0.25 l (shisha)',
+      en: '0.25 L (glass)'
+    },
+    tags: ['Апельсин', 'Стекло', 'Хит'],
+    popular: true,
+    calories: 110,
+    image: '/dishes/drinks/fanta-glass.jpg',
+    defaultPlaceholderType: 'fanta'
   },
   {
     id: 'fanta-05',
@@ -780,6 +885,7 @@ export const MENU_ITEMS: Dish[] = [
     },
     tags: ['Апельсин', '0.5L'],
     calories: 150,
+    image: '/dishes/drinks/fanta-05.webp',
     defaultPlaceholderType: 'fanta'
   },
   {
@@ -803,6 +909,7 @@ export const MENU_ITEMS: Dish[] = [
     },
     tags: ['Апельсин', '1.0L'],
     calories: 300,
+    image: '/dishes/drinks/fanta-1l.webp',
     defaultPlaceholderType: 'fanta'
   }
 ];
