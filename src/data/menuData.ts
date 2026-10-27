@@ -279,9 +279,11 @@ export const MENU_ITEMS: Dish[] = [
       uz: '1 porsiya (350 ml)',
       en: '1 portion (350 ml)'
     },
-    tags: ['Горячее', 'Бульон'],
+    tags: ['Горячее', 'Бульон', 'Хит'],
+    popular: true,
     preparationTime: 12,
     calories: 410,
+    image: '/dishes/bulyonli-chuchvara.jpg',
     defaultPlaceholderType: 'soup-ugra'
   },
   {
@@ -360,6 +362,7 @@ export const MENU_ITEMS: Dish[] = [
     tags: ['На пару', 'С зеленью'],
     preparationTime: 20,
     calories: 380,
+    image: '/dishes/manti.jpg',
     defaultPlaceholderType: 'manti-meat'
   },
   {
@@ -381,10 +384,11 @@ export const MENU_ITEMS: Dish[] = [
       uz: '4 dona bir porsiyada',
       en: '4 pcs per serving'
     },
-    tags: ['Фирменное', 'Сочное'],
+    tags: ['Фирменное', 'Сочное', 'Хит'],
     popular: true,
     preparationTime: 20,
     calories: 610,
+    image: '/dishes/manti.jpg',
     defaultPlaceholderType: 'manti-meat'
   },
   {
@@ -409,6 +413,7 @@ export const MENU_ITEMS: Dish[] = [
     tags: ['На пару', 'С тыквой'],
     preparationTime: 20,
     calories: 360,
+    image: '/dishes/manti.jpg',
     defaultPlaceholderType: 'manti-pumpkin'
   },
 
@@ -795,17 +800,17 @@ export const MENU_ITEMS: Dish[] = [
     defaultPlaceholderType: 'coca-cola'
   },
   {
-    id: 'bonaqua-1l',
+    id: 'bonaqua-still-1l',
     categoryId: 'drinks',
     title: {
-      ru: 'Bonaqua 1 л',
-      uz: 'Bonaqua 1l',
-      en: 'Bonaqua 1L'
+      ru: 'Bonaqua 1 л (без газа)',
+      uz: 'Bonaqua 1l (gazsiz)',
+      en: 'Bonaqua 1L (Still)'
     },
     description: {
-      ru: 'Чистая природная питьевая вода Bonaqua.',
-      uz: 'Toza tabiiy ichimlik suvi Bonaqua 1 litr.',
-      en: 'Pure natural drinking water Bonaqua 1 Liter.'
+      ru: 'Чистая природная питьевая негазированная вода Bonaqua 1 л.',
+      uz: 'Toza tabiiy gazsiz ichimlik suvi Bonaqua 1 litr.',
+      en: 'Pure natural still drinking water Bonaqua 1.0 Liter.'
     },
     price: 7250,
     portion: {
@@ -813,31 +818,35 @@ export const MENU_ITEMS: Dish[] = [
       uz: '1.0 l',
       en: '1.0 L'
     },
-    tags: ['Вода', '1L'],
+    tags: ['Вода', 'Без газа', '1.0L'],
+    popular: true,
     calories: 0,
+    image: '/dishes/drinks/bonaqua-still-1l.png',
     defaultPlaceholderType: 'bonaqua'
   },
   {
-    id: 'bonaqua-15l',
+    id: 'bonaqua-gas-1l',
     categoryId: 'drinks',
     title: {
-      ru: 'Bonaqua 1.5 л',
-      uz: 'Bonaqua 1.5l',
-      en: 'Bonaqua 1.5L'
+      ru: 'Bonaqua 1 л (с газом)',
+      uz: 'Bonaqua 1l (gazli)',
+      en: 'Bonaqua 1L (Sparkling)'
     },
     description: {
-      ru: 'Природная освежающая питьевая вода Bonaqua в большой бутылке.',
-      uz: 'Bonaqua tabiiy ichimlik suvi katta hajmda (1.5 litr).',
-      en: 'Pure natural mineral drinking water Bonaqua (1.5 Liter).'
+      ru: 'Освежающая газированная минеральная питьевая вода Bonaqua 1 л.',
+      uz: 'Muzdek gazlangan tabiiy ichimlik suvi Bonaqua 1 litr.',
+      en: 'Refreshing sparkling mineral drinking water Bonaqua 1.0 Liter.'
     },
-    price: 9000,
+    price: 7250,
     portion: {
-      ru: '1.5 л',
-      uz: '1.5 l',
-      en: '1.5 L'
+      ru: '1.0 л',
+      uz: '1.0 l',
+      en: '1.0 L'
     },
-    tags: ['Вода', '1.5L'],
+    tags: ['Вода', 'С газом', '1.0L'],
+    popular: true,
     calories: 0,
+    image: '/dishes/drinks/bonaqua-gas-1l.jpg',
     defaultPlaceholderType: 'bonaqua'
   },
   {
