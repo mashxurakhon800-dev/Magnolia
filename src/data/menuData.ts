@@ -188,7 +188,7 @@ export const MENU_ITEMS: Dish[] = [
     categoryId: 'chuchvara',
     title: {
       ru: 'Чучвара Альфредо',
-      uz: 'Chuchvara Alfredo',
+      uz: 'Alfredo chuchvara',
       en: 'Chuchvara Alfredo'
     },
     description: {
@@ -196,7 +196,7 @@ export const MENU_ITEMS: Dish[] = [
       uz: "Mayin xonaki chuchvara, quyuq qaymoqli Alfredo sousi, parmezan pishlog'i va ko'katlar bilan.",
       en: 'Handcrafted beef dumplings tossed in a rich, creamy Alfredo sauce topped with shaved parmesan.'
     },
-    price: 48000,
+    price: 60000,
     portion: {
       ru: '1 порция (280 г)',
       uz: '1 porsiya (280 g)',
@@ -214,7 +214,7 @@ export const MENU_ITEMS: Dish[] = [
     categoryId: 'chuchvara',
     title: {
       ru: 'Чучвара Болоньезе',
-      uz: 'Chuchvara Balanyezo',
+      uz: 'Bolonyezo chuchvara',
       en: 'Chuchvara Bolognese'
     },
     description: {
@@ -222,7 +222,7 @@ export const MENU_ITEMS: Dish[] = [
       uz: "Pomidorlar, xushbo'y ziravorlar va maydalangan go'shtdan tayyorlangan quyuq Bolonez sousi bilan tortilgan chuchvara.",
       en: 'Juicy dumplings topped with slow-simmered Bolognese ragù made of ripe tomatoes and beef.'
     },
-    price: 49000,
+    price: 55000,
     portion: {
       ru: '1 порция (300 г)',
       uz: '1 porsiya (300 g)',
@@ -273,7 +273,7 @@ export const MENU_ITEMS: Dish[] = [
       uz: "Tiniq, xushxo'r mol go'shti bulyonida pishirilgan an'anaviy chuchvara, shivit sepilgan.",
       en: 'Traditional beef dumplings swimming in an aromatic clear meat broth with fresh dill.'
     },
-    price: 42000,
+    price: 45000,
     portion: {
       ru: '1 порция (350 мл)',
       uz: '1 porsiya (350 ml)',
@@ -317,7 +317,7 @@ export const MENU_ITEMS: Dish[] = [
     categoryId: 'chuchvara',
     title: {
       ru: 'Жареная чучвара (Большое ассорти)',
-      uz: 'Qovurma assorti (Katta)',
+      uz: 'Qovurma assorti katta',
       en: 'Crispy Fried Dumplings Assorted (Large)'
     },
     description: {
@@ -325,7 +325,7 @@ export const MENU_ITEMS: Dish[] = [
       uz: "Katta tovoqda qarsildoq qilib qovurilgan chuchvaralar assortisi, maxsus sous bilan (katta porsiya — 30 dona).",
       en: 'Large platter of crispy golden fried dumplings with special dipping sauce for sharing (large portion — 30 pcs).'
     },
-    price: 80000,
+    price: 60000,
     portion: {
       ru: '30 шт (360 г)',
       uz: '30 dona (360 g)',
@@ -345,15 +345,15 @@ export const MENU_ITEMS: Dish[] = [
     categoryId: 'manti',
     title: {
       ru: 'Манты с зеленью',
-      uz: "Ko'k manti",
+      uz: "Monti kokatli 1pors",
       en: 'Steamed Herb Manti'
     },
     description: {
       ru: 'Большие паровые манты из тонкого теста, наполненные смесью свежей весенней зелени и специй.',
-      uz: "Yupqa xamirdan tayyorlangan, bahoriy barra ko'katlar bilan to'ldirilgan parvarishlangan manti.",
+      uz: "Yupqa xamirdan tayyorlangan, bahoriy barra ko'katlar bilan to'ldirilgan sersuv monti.",
       en: 'Steamed manti filled with fragrant spring herbs and sweet onions.'
     },
-    price: 42000,
+    price: 26000,
     portion: {
       ru: '4 шт в порции',
       uz: '4 dona bir porsiyada',
@@ -370,15 +370,15 @@ export const MENU_ITEMS: Dish[] = [
     categoryId: 'manti',
     title: {
       ru: 'Манты с мясом',
-      uz: "Go'shtli manti",
+      uz: "Monti goshtli 1pors",
       en: 'Traditional Beef Manti'
     },
     description: {
       ru: 'Фирменные сочные манты из тонкого теста с рубленой говядиной, луком, зирой и черным перцем.',
-      uz: "Yupqa xamir, maydalangan saralangan mol go'shti, shirin piyoz va zira bilan sersuv manti.",
+      uz: "Yupqa xamir, maydalangan saralangan mol go'shti, shirin piyoz va zira bilan sersuv monti.",
       en: 'Authentic steamed manti packed with tender minced beef, sweet onions, and cumin.'
     },
-    price: 48000,
+    price: 35000,
     portion: {
       ru: '4 шт в порции',
       uz: '4 dona bir porsiyada',
@@ -396,15 +396,15 @@ export const MENU_ITEMS: Dish[] = [
     categoryId: 'manti',
     title: {
       ru: 'Манты с тыквой',
-      uz: 'Qovoqli manti',
+      uz: 'Monti oshqovoqli 1pors',
       en: 'Sweet Pumpkin Manti'
     },
     description: {
       ru: 'Нежные паровые манты со сладкой тыквой, карамелизированным луком и щепоткой восточных пряностей.',
-      uz: "Shirin qovoq, qovurilgan piyoz va sharqona ziravorlar uyg'unligidagi mayin par manti.",
+      uz: "Shirin qovoq, qovurilgan piyoz va sharqona ziravorlar uyg'unligidagi mayin monti.",
       en: 'Delicately steamed dumplings packed with sweet spiced pumpkin and browned butter.'
     },
-    price: 39000,
+    price: 26000,
     portion: {
       ru: '4 шт в порции',
       uz: '4 dona bir porsiyada',
@@ -459,7 +459,7 @@ export const MENU_ITEMS: Dish[] = [
       uz: "Saralangan mol go'shtidan shirali qovurilgan kotlet, qarsildoq kartoshka fri va sous bilan.",
       en: 'Juicy pan-seared beef cutlet served alongside golden crisp French fries.'
     },
-    price: 52000,
+    price: 55000,
     portion: {
       ru: '1 порция (320 г)',
       uz: '1 porsiya (320 g)',
@@ -501,16 +501,16 @@ export const MENU_ITEMS: Dish[] = [
     id: 'pirojok-kartoshka-gosht',
     categoryId: 'mains',
     title: {
-      ru: 'Пирожок (картошка и мясо)',
-      uz: "Pirojok (kartoshka va biqin go'shti)",
-      en: 'Pirojok (Flank Beef & Golden Potatoes)'
+      ru: 'Пирожок',
+      uz: 'Pirojok',
+      en: 'Pirojok (Beef & Golden Potatoes)'
     },
     description: {
       ru: 'Сочный обжаренный стейк из говядины (бикин) с запеченными золотистыми дольками картофеля, сладкой кукурузой и острым перцем.',
       uz: "Shirali qovurilgan mol go'shti (biqin lahm), tilla rang pishirilgan kartoshka bo'laklari, shirin makkajo'xori va qalampir bilan.",
       en: 'Succulent roasted beef flank steak served with golden browned potatoes, sweet corn cob, and chili pepper.'
     },
-    price: 58000,
+    price: 55000,
     portion: {
       ru: '1 порция (350 г)',
       uz: '1 porsiya (350 g)',
@@ -629,16 +629,16 @@ export const MENU_ITEMS: Dish[] = [
     id: 'chortoq-premium',
     categoryId: 'drinks',
     title: {
-      ru: 'Chortoq Premium (синее стекло)',
-      uz: 'Chortoq Premium (koʻk shisha)',
-      en: 'Chortoq Premium (Blue Glass)'
+      ru: 'Chortoq Premium',
+      uz: 'Chrtoq premium',
+      en: 'Chortoq Premium'
     },
     description: {
       ru: 'Природная лечебно-столовая минеральная вода Chortoq в элегантной синей стеклянной бутылке 0.33 л.',
       uz: 'Nafis koʻk rangli shisha butilkada tortiladigan tabiiy mineral davolovchi Chortoq suvi 0.33 l.',
       en: 'Natural mineral spring water Chortoq in an elegant blue designer glass bottle 0.33 L.'
     },
-    price: 12000,
+    price: 15000,
     portion: {
       ru: '0.33 л (стекло)',
       uz: '0.33 l (shisha)',
@@ -654,16 +654,16 @@ export const MENU_ITEMS: Dish[] = [
     id: 'chortoq-mineral-glass',
     categoryId: 'drinks',
     title: {
-      ru: 'Chortoq минеральная (зеленое стекло)',
-      uz: 'Chortoq tabiiy mineral suv (yashil shisha)',
-      en: 'Chortoq Spring Mineral Water (Green Glass)'
+      ru: 'Chortoq минеральная (стекло)',
+      uz: 'Chortoq shisha',
+      en: 'Chortoq Mineral Water (Glass)'
     },
     description: {
       ru: 'Легендарная природная гидрокарбонатно-натриевая лечебно-столовая минеральная вода Chortoq в зеленой стеклянной бутылке 0.33 л.',
       uz: 'Mashhur shifobaxsh tabiiy Chortoq mineral suvi, yashil shisha butilkada 0.33 l.',
       en: 'Iconic natural medicinal table mineral water Chortoq in green glass bottle 0.33 L.'
     },
-    price: 10000,
+    price: 7500,
     portion: {
       ru: '0.33 л (стекло)',
       uz: '0.33 l (shisha)',
@@ -679,16 +679,16 @@ export const MENU_ITEMS: Dish[] = [
     id: 'chortoq-basilik-rayhon',
     categoryId: 'drinks',
     title: {
-      ru: 'Chortoq Василик-Райхон (стекло)',
-      uz: 'Chortoq Rayhon (shisha)',
-      en: 'Chortoq Basil-Rayhon (Glass Bottle)'
+      ru: 'Chortoq Райхон (стекло)',
+      uz: 'Chortoq rayhon',
+      en: 'Chortoq Rayhon (Glass Bottle)'
     },
     description: {
       ru: 'Освежающая природная минеральная вода Chortoq с натуральным ароматом горного базилика (райхона) без сахара, 0.33 л в стекле.',
       uz: "Tog' rayhoni (basilik) ta'mli shakarsiz tabiiy shifobaxsh Chortoq mineral suvi, 0.33 l shisha idishda.",
       en: 'Sugar-free natural mineral water Chortoq infused with mountain basil (rayhon) flavor, 0.33 L in a glass bottle.'
     },
-    price: 12000,
+    price: 11000,
     portion: {
       ru: '0.33 л (стекло)',
       uz: '0.33 l (shisha)',
@@ -701,25 +701,25 @@ export const MENU_ITEMS: Dish[] = [
     defaultPlaceholderType: 'bonaqua'
   },
   {
-    id: 'chortoq-mineral-05',
+    id: 'chortoq-mineral-15',
     categoryId: 'drinks',
     title: {
-      ru: 'Chortoq минеральная 0.5 л',
-      uz: 'Chortoq mineral suv 0.5l',
-      en: 'Chortoq Mineral Water 0.5L'
+      ru: 'Chortoq 1.5 л',
+      uz: 'Chortoq 1.5',
+      en: 'Chortoq Mineral Water 1.5L'
     },
     description: {
-      ru: 'Природная газированная минеральная вода Chortoq из чистейших горных источников.',
-      uz: "Toza tog' manbalaridan olingan gazlangan tabiiy Chortoq mineral suvi 0.5 litr.",
-      en: 'Pure mountain spring sparkling mineral water Chortoq 0.5 Liter.'
+      ru: 'Природная газированная лечебно-столовая минеральная вода Chortoq 1.5 л.',
+      uz: "Toza tog' manbalaridan olingan gazlangan tabiiy shifobaxsh Chortoq mineral suvi 1.5 litr.",
+      en: 'Pure mountain spring sparkling mineral water Chortoq 1.5 Liter.'
     },
-    price: 7000,
+    price: 16000,
     portion: {
-      ru: '0.5 л',
-      uz: '0.5 l',
-      en: '0.5 L'
+      ru: '1.5 л',
+      uz: '1.5 l',
+      en: '1.5 L'
     },
-    tags: ['Минеральная вода', '0.5L'],
+    tags: ['Минеральная вода', '1.5L', 'Освежающее'],
     calories: 0,
     image: '/dishes/drinks/chortoq-mineral-05.jpg',
     defaultPlaceholderType: 'bonaqua'
@@ -847,6 +847,31 @@ export const MENU_ITEMS: Dish[] = [
     popular: true,
     calories: 0,
     image: '/dishes/drinks/bonaqua-gas-1l.jpg',
+    defaultPlaceholderType: 'bonaqua'
+  },
+  {
+    id: 'bonaqua-15l',
+    categoryId: 'drinks',
+    title: {
+      ru: 'Bonaqua 1.5 л',
+      uz: 'Bonaqua 1.5l',
+      en: 'Bonaqua 1.5L'
+    },
+    description: {
+      ru: 'Природная минеральная питьевая вода Bonaqua 1.5 л.',
+      uz: 'Tabiiy ichimlik suvi Bonaqua 1.5 litr.',
+      en: 'Natural drinking water Bonaqua 1.5 Liter.'
+    },
+    price: 9000,
+    portion: {
+      ru: '1.5 л',
+      uz: '1.5 l',
+      en: '1.5 L'
+    },
+    tags: ['Вода', '1.5L'],
+    popular: true,
+    calories: 0,
+    image: '/dishes/drinks/bonaqua-still-1l.png',
     defaultPlaceholderType: 'bonaqua'
   },
   {

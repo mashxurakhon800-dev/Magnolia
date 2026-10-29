@@ -9,7 +9,6 @@ import { PWAInstallModal } from './components/PWAInstallModal';
 import { Footer } from './components/Footer';
 import { MENU_ITEMS, CATEGORIES } from './data/menuData';
 import { Dish, CategoryId, Language, CartItem } from './types/menu';
-import { AdminMenuEditorModal } from './components/AdminMenuEditorModal';
 import { CartModal } from './components/CartModal';
 import { FloatingCartBar } from './components/FloatingCartBar';
 import { 
@@ -20,11 +19,7 @@ import {
   Flame, 
   Sparkles, 
   CupSoda,
-  Salad,
-  Plus,
-  Copy,
-  RotateCcw,
-  Edit3
+  Salad
 } from 'lucide-react';
 
 const CATEGORY_SECTION_ICONS: Record<string, React.FC<{ className?: string }>> = {
@@ -43,32 +38,14 @@ export default function App() {
   const [activeCategory, setActiveCategory] = useState<CategoryId>('all');
   const [viewMode, setViewMode] = useState<'grid' | 'book'>('grid');
 
-  // Dynamic dishes state with localStorage persistence
-  const [dishes, setDishes] = useState<Dish[]>(() => {
+  // Dishes loaded directly from master menu
+  const [dishes] = useState<Dish[]>(() => {
     try {
-      const saved = localStorage.getItem('magnolia_custom_menu_v7');
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
-      }
-    } catch (e) {
-      console.error(e);
-    }
+      localStorage.removeItem('magnolia_custom_menu_v7');
+      localStorage.removeItem('magnolia_admin_mode');
+    } catch {}
     return MENU_ITEMS;
   });
-
-  // Admin Mode state
-  const [isAdminMode, setIsAdminMode] = useState<boolean>(() => {
-    try {
-      return localStorage.getItem('magnolia_admin_mode') === 'true';
-    } catch {
-      return false;
-    }
-  });
-
-  // Editor Modal
-  const [dishToEdit, setDishToEdit] = useState<Dish | null>(null);
-  const [isEditorOpen, setIsEditorOpen] = useState(false);
 
   // Modal
   const [selectedDishForDetails, setSelectedDishForDetails] = useState<Dish | null>(null);
@@ -162,56 +139,10 @@ export default function App() {
     } catch {}
   }, [favorites]);
 
-  useEffect(() => {
-    try {
-      localStorage.setItem('magnolia_admin_mode', String(isAdminMode));
-    } catch {}
-  }, [isAdminMode]);
-
   const handleToggleFavorite = (dishId: string) => {
     setFavorites((prev) =>
       prev.includes(dishId) ? prev.filter((id) => id !== dishId) : [...prev, dishId]
     );
-  };
-
-  const handleSaveDish = (updatedDish: Dish) => {
-    setDishes((prev) => {
-      const exists = prev.some((d) => d.id === updatedDish.id);
-      const next = exists
-        ? prev.map((d) => (d.id === updatedDish.id ? updatedDish : d))
-        : [updatedDish, ...prev];
-      try {
-        localStorage.setItem('magnolia_custom_menu_v7', JSON.stringify(next));
-      } catch (e) {
-        console.error(e);
-      }
-      return next;
-    });
-  };
-
-  const handleDeleteDish = (dishId: string) => {
-    setDishes((prev) => {
-      const next = prev.filter((d) => d.id !== dishId);
-      try {
-        localStorage.setItem('magnolia_custom_menu_v7', JSON.stringify(next));
-      } catch (e) {
-        console.error(e);
-      }
-      return next;
-    });
-  };
-
-  const handleResetToDefault = () => {
-    if (confirm(currentLanguage === 'uz' ? "Barcha taomlar va narxlarni asl holatiga qaytarishni xohlaysizmi?" : "Сбросить меню к исходному состоянию?")) {
-      localStorage.removeItem('magnolia_custom_menu_v7');
-      setDishes(MENU_ITEMS);
-    }
-  };
-
-  const handleExportMenuJson = () => {
-    const jsonStr = JSON.stringify(dishes, null, 2);
-    navigator.clipboard.writeText(jsonStr);
-    alert(currentLanguage === 'uz' ? "Menyu ma'lumotlari (JSON) nusxalandi!" : "Данные меню скопированы в буфер обмена!");
   };
 
   // Filter items logic
@@ -312,59 +243,9 @@ export default function App() {
         currentLanguage={currentLanguage}
         onLanguageChange={setCurrentLanguage}
         onOpenInstall={() => setIsInstallModalOpen(true)}
-        isAdminMode={isAdminMode}
-        onToggleAdminMode={() => setIsAdminMode(!isAdminMode)}
         cartCount={cartTotalCount}
         onOpenCart={() => setIsCartOpen(true)}
       />
-
-      {/* Admin Mode Management Bar */}
-      {isAdminMode && (
-        <div className="bg-[#2D0B12] border-b border-[#D4AF37]/50 px-4 py-2.5 shadow-xl sticky top-[58px] z-35">
-          <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 text-xs">
-            <div className="flex items-center gap-2 text-[#FAF5EE]">
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
-              <span className="font-bold text-[#D4AF37]">
-                {currentLanguage === 'uz' ? 'Boshqaruv rejimi (Admin) faol' : 'Режим управления меню (Админ)'}
-              </span>
-              <span className="text-[#A89280]">
-                ({currentLanguage === 'uz' ? `Jami taomlar: ${dishes.length} ta` : `Всего блюд: ${dishes.length}`})
-              </span>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <button
-                onClick={() => {
-                  setDishToEdit(null);
-                  setIsEditorOpen(true);
-                }}
-                className="px-3.5 py-1.5 rounded-xl bg-[#D4AF37] hover:bg-[#F4D185] text-black font-bold flex items-center gap-1.5 shadow-md transition-all active:scale-95"
-              >
-                <Plus className="w-3.5 h-3.5" />
-                <span>{currentLanguage === 'uz' ? '+ Yangi taom qo\'shish' : '+ Добавить блюдо'}</span>
-              </button>
-
-              <button
-                onClick={handleExportMenuJson}
-                className="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-[#FAF5EE] border border-white/15 flex items-center gap-1.5 transition-colors"
-                title="Barcha o'zgarishlarni JSON qilib nusxalash"
-              >
-                <Copy className="w-3.5 h-3.5 text-[#F4D185]" />
-                <span>{currentLanguage === 'uz' ? 'Eksport (JSON)' : 'Экспорт'}</span>
-              </button>
-
-              <button
-                onClick={handleResetToDefault}
-                className="px-2.5 py-1.5 rounded-xl bg-red-950/60 hover:bg-red-900 text-red-200 border border-red-800/40 flex items-center gap-1 transition-colors"
-                title="Menyuni asl holatiga qaytarish"
-              >
-                <RotateCcw className="w-3.5 h-3.5" />
-                <span className="hidden sm:inline">{currentLanguage === 'uz' ? 'Asliga qaytarish' : 'Сброс'}</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* 2. Hero Banner */}
       <div id="top">
@@ -495,12 +376,6 @@ export default function App() {
                             onOpenDetails={(d) => setSelectedDishForDetails(d)}
                             isFavorite={isFav}
                             onToggleFavorite={handleToggleFavorite}
-                            isAdminMode={isAdminMode}
-                            onEditDish={(d) => {
-                              setDishToEdit(d);
-                              setIsEditorOpen(true);
-                            }}
-                            onDeleteDish={handleDeleteDish}
                             cartQuantity={cartMap[dish.id] || 0}
                             onAddToCart={handleAddToCart}
                             onUpdateCartQuantity={handleUpdateCartQuantity}
@@ -532,19 +407,6 @@ export default function App() {
       <PWAInstallModal
         isOpen={isInstallModalOpen}
         onClose={() => setIsInstallModalOpen(false)}
-        currentLanguage={currentLanguage}
-      />
-
-      {/* Admin Menu Editor Modal */}
-      <AdminMenuEditorModal
-        isOpen={isEditorOpen}
-        onClose={() => {
-          setIsEditorOpen(false);
-          setDishToEdit(null);
-        }}
-        dishToEdit={dishToEdit}
-        onSaveDish={handleSaveDish}
-        onDeleteDish={handleDeleteDish}
         currentLanguage={currentLanguage}
       />
 
