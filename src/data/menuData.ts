@@ -304,14 +304,14 @@ export const MENU_ITEMS: Dish[] = [
     id: 'qovurma-assorti',
     categoryId: 'chuchvara',
     title: {
-      ru: 'Жареная чучвара (Маленькое ассорти)',
-      uz: 'Qovurma assorti (Kichik)',
-      en: 'Crispy Fried Dumplings Assorted (Small)'
+      ru: 'Жареная чучвара Ассорти',
+      uz: 'Qovurma assorti',
+      en: 'Crispy Fried Dumplings Assorted'
     },
     description: {
-      ru: 'Хрустящие обжаренные во фритюре пельмешки с двумя видами начинки и фирменным соусом (маленькая порция — 15 шт).',
-      uz: "Qarsildoq qilib qovurilgan ikki xil nachinkali chuchvaralar to'plami, maxsus sous bilan (kichik porsiya — 15 dona).",
-      en: 'Golden crispy wok-fried mini dumplings served with house dipping sauce (small portion — 15 pcs).'
+      ru: 'Хрустящие обжаренные во фритюре пельмешки с миксом начинок и фирменным соусом (15 шт).',
+      uz: "Qarsildoq qilib qovurilgan turli xil nachinkali chuchvaralar to'plami, maxsus sous bilan (15 dona).",
+      en: 'Golden crispy wok-fried assorted mini dumplings served with house dipping sauce (15 pcs).'
     },
     price: 45000,
     portion: {
@@ -319,7 +319,7 @@ export const MENU_ITEMS: Dish[] = [
       uz: '15 dona (180 g)',
       en: '15 pcs (180 g)'
     },
-    tags: ['Хрустящее', 'Маленькая порция', 'Хит'],
+    tags: ['Хрустящее', 'Ассорти', 'Хит'],
     popular: true,
     preparationTime: 12,
     calories: 540,
@@ -327,28 +327,78 @@ export const MENU_ITEMS: Dish[] = [
     defaultPlaceholderType: 'fried-dumplings'
   },
   {
-    id: 'qovurma-assorti-katta',
+    id: 'qovurma-goshtli',
     categoryId: 'chuchvara',
     title: {
-      ru: 'Жареная чучвара (Большое ассорти)',
-      uz: 'Qovurma assorti katta',
-      en: 'Crispy Fried Dumplings Assorted (Large)'
+      ru: 'Жареная чучвара с мясом',
+      uz: "Qovurma go'shtli",
+      en: 'Crispy Fried Dumplings with Meat'
     },
     description: {
-      ru: 'Большая тарелка хрустящих жареных пельмешек ассорти с фирменным томатным соусом на компанию (большая порция — 30 шт).',
-      uz: "Katta tovoqda qarsildoq qilib qovurilgan chuchvaralar assortisi, maxsus sous bilan (katta porsiya — 30 dona).",
-      en: 'Large platter of crispy golden fried dumplings with special dipping sauce for sharing (large portion — 30 pcs).'
+      ru: 'Хрустящая жареная чучвара с начинкой из сочной отборной говядины, лука и восточных пряностей (15 шт).',
+      uz: "Saralangan shirali mol go'shti bilan to'ldirilgan, qarsildoq qilib qovurilgan chuchvaralar (15 dona).",
+      en: 'Crispy golden fried mini dumplings packed with seasoned minced beef and onions (15 pcs).'
     },
     price: 60000,
     portion: {
-      ru: '30 шт (360 г)',
-      uz: '30 dona (360 g)',
-      en: '30 pcs (360 g)'
+      ru: '15 шт (180 г)',
+      uz: '15 dona (180 g)',
+      en: '15 pcs (180 g)'
     },
-    tags: ['Хрустящее', 'Большая порция', 'Хит'],
+    tags: ['Хрустящее', 'С мясом', 'Хит'],
     popular: true,
-    preparationTime: 18,
-    calories: 1080,
+    preparationTime: 12,
+    calories: 590,
+    image: '/dishes/qovurma-assorti.jpg',
+    defaultPlaceholderType: 'fried-dumplings'
+  },
+  {
+    id: 'qovurma-qovoqli',
+    categoryId: 'chuchvara',
+    title: {
+      ru: 'Жареная чучвара с тыквой',
+      uz: 'Qovurma oshqovoqli',
+      en: 'Crispy Fried Dumplings with Pumpkin'
+    },
+    description: {
+      ru: 'Золотистые хрустящие жареные пельмешки со сладкой карамелизированной тыквой и специями (15 шт).',
+      uz: "Shirin qovoq va sharqona ziravorlar uyg'unligida qarsildoq qilib qovurilgan xushbo'y chuchvaralar (15 dona).",
+      en: 'Crispy fried golden dumplings filled with tender spiced pumpkin (15 pcs).'
+    },
+    price: 35000,
+    portion: {
+      ru: '15 шт (180 г)',
+      uz: '15 dona (180 g)',
+      en: '15 pcs (180 g)'
+    },
+    tags: ['Хрустящее', 'С тыквой'],
+    preparationTime: 12,
+    calories: 420,
+    image: '/dishes/qovurma-assorti.jpg',
+    defaultPlaceholderType: 'fried-dumplings'
+  },
+  {
+    id: 'qovurma-kokatli',
+    categoryId: 'chuchvara',
+    title: {
+      ru: 'Жареная чучвара с зеленью',
+      uz: "Qovurma ko'katli",
+      en: 'Crispy Fried Dumplings with Herbs'
+    },
+    description: {
+      ru: 'Хрустящие жареные пельмешки с начинкой из свежей сочной весенней зелени и ароматных трав (15 шт).',
+      uz: "Yangi bahoriy barra ko'katlar bilan to'ldirilgan va qarsildoq qilib qovurilgan ko'k chuchvara (15 dona).",
+      en: 'Crispy wok-fried dumplings stuffed with fragrant mountain herbs and fresh greens (15 pcs).'
+    },
+    price: 35000,
+    portion: {
+      ru: '15 шт (180 г)',
+      uz: '15 dona (180 g)',
+      en: '15 pcs (180 g)'
+    },
+    tags: ['Хрустящее', 'С зеленью', 'Вегетарианское'],
+    preparationTime: 12,
+    calories: 390,
     image: '/dishes/qovurma-assorti.jpg',
     defaultPlaceholderType: 'fried-dumplings'
   },
