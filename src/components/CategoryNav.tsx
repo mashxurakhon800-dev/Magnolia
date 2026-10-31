@@ -7,7 +7,8 @@ import {
   Flame, 
   Sparkles, 
   CupSoda,
-  Salad 
+  Salad,
+  Cake
 } from 'lucide-react';
 import { CategoryId, Language } from '../types/menu';
 import { CATEGORIES } from '../data/menuData';
@@ -27,6 +28,7 @@ const ICONS: Record<string, React.FC<{ className?: string }>> = {
   CookingPot,
   Flame,
   Sparkles,
+  Cake,
   CupSoda,
 };
 

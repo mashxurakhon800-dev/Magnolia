@@ -15,7 +15,7 @@ export const MenuBookView: React.FC<MenuBookViewProps> = ({
   currentLanguage,
   onOpenDetails,
 }) => {
-  const [activeSheet, setActiveSheet] = useState<'traditional' | 'drinks'>('traditional');
+  const [activeSheet, setActiveSheet] = useState<'traditional' | 'desserts' | 'drinks'>('traditional');
 
   // Exact dishes categorized
   const salads = dishes.filter((d) => d.categoryId === 'salads');
@@ -23,20 +23,24 @@ export const MenuBookView: React.FC<MenuBookViewProps> = ({
   const manti = dishes.filter((d) => d.categoryId === 'manti');
   const soups = dishes.filter((d) => d.categoryId === 'soups');
   const mains = dishes.filter((d) => d.categoryId === 'mains');
+  const desserts = dishes.filter((d) => d.categoryId === 'desserts');
   const drinks = dishes.filter((d) => d.categoryId === 'drinks');
 
   const sheetTabs = {
     ru: [
       { id: 'traditional', label: 'Лист 1: Традиционная кухня' },
-      { id: 'drinks', label: 'Лист 2: Напитки (NAPITKI)' },
+      { id: 'desserts', label: 'Лист 2: Десерты (SHIRINLIKLAR)' },
+      { id: 'drinks', label: 'Лист 3: Напитки (NAPITKI)' },
     ],
     uz: [
       { id: 'traditional', label: '1-Varaq: Milliy oshxona' },
-      { id: 'drinks', label: '2-Varaq: Napitki' },
+      { id: 'desserts', label: '2-Varaq: Shirinliklar' },
+      { id: 'drinks', label: '3-Varaq: Napitki' },
     ],
     en: [
       { id: 'traditional', label: 'Sheet 1: Traditional Kitchen' },
-      { id: 'drinks', label: 'Sheet 2: Beverages (NAPITKI)' },
+      { id: 'desserts', label: 'Sheet 2: Desserts (SHIRINLIKLAR)' },
+      { id: 'drinks', label: 'Sheet 3: Beverages (NAPITKI)' },
     ],
   }[currentLanguage];
 
@@ -183,7 +187,48 @@ export const MenuBookView: React.FC<MenuBookViewProps> = ({
           </div>
         )}
 
-        {/* Sheet 2: NAPITKI (Exact matching Image 2) */}
+        {/* Sheet 2: SHIRINLIKLAR (DESSERTS) */}
+        {activeSheet === 'desserts' && (
+          <div className="relative z-10 mt-8 space-y-8 max-w-xl mx-auto">
+            <div>
+              <div className="text-center mb-6">
+                <h3 className="font-cinzel text-xl md:text-2xl font-bold tracking-[0.3em] text-[#FFE8C2] uppercase">
+                  Shirinliklar
+                </h3>
+                <div className="w-16 h-[1px] bg-[#FFE8C2]/60 mx-auto mt-2" />
+              </div>
+
+              <div className="space-y-3 bg-[#4F191E]/70 p-5 rounded-xl border border-[#F2DEB9]/30">
+                {desserts.map((dish) => (
+                  <div
+                    key={dish.id}
+                    onClick={() => onOpenDetails(dish)}
+                    className="flex items-center justify-between py-2.5 px-3 hover:bg-[#8C2D38]/40 rounded-lg cursor-pointer transition-colors"
+                  >
+                    <div className="flex-1 min-w-0 pr-3">
+                      <div className="flex items-center gap-2">
+                        <span className="font-cinzel tracking-wider text-base md:text-lg text-[#FAF5EE] font-semibold truncate">
+                          {dish.title[currentLanguage]}
+                        </span>
+                      </div>
+                      <span className="text-xs font-mono text-[#F4D185]">
+                        {dish.portion[currentLanguage]}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2 shrink-0">
+                      <span className="font-mono text-sm font-bold text-[#FFE8C2]">
+                        {dish.price.toLocaleString('ru-RU')} UZS
+                      </span>
+                      <ChevronRight className="w-4 h-4 text-[#C7B7A3]" />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Sheet 3: NAPITKI (DRINKS) */}
         {activeSheet === 'drinks' && (
           <div className="relative z-10 mt-8 space-y-8 max-w-xl mx-auto">
             <div>

@@ -13,6 +13,7 @@ export type CategoryId =
   | 'manti'
   | 'soups'
   | 'mains'
+  | 'desserts'
   | 'drinks';
 
 export interface Category {

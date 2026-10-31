@@ -19,7 +19,8 @@ import {
   Flame, 
   Sparkles, 
   CupSoda,
-  Salad
+  Salad,
+  Cake
 } from 'lucide-react';
 
 const CATEGORY_SECTION_ICONS: Record<string, React.FC<{ className?: string }>> = {
@@ -28,6 +29,7 @@ const CATEGORY_SECTION_ICONS: Record<string, React.FC<{ className?: string }>> =
   manti: CircleDot,
   soups: CookingPot,
   mains: Flame,
+  desserts: Cake,
   drinks: CupSoda,
 };
 
@@ -204,6 +206,7 @@ export default function App() {
       manti: 0,
       soups: 0,
       mains: 0,
+      desserts: 0,
       drinks: 0,
     };
 

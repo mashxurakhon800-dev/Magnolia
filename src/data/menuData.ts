@@ -86,6 +86,20 @@ export const CATEGORIES: Category[] = [
     }
   },
   {
+    id: 'desserts',
+    name: {
+      ru: 'Десерты',
+      uz: 'Shirinliklar',
+      en: 'Desserts'
+    },
+    iconName: 'Cake',
+    description: {
+      ru: 'Изысканные торты, муссовые пирожные и трайфлы',
+      uz: 'Nafis pishiriqlar, mussli shirinliklar va trayflar',
+      en: 'Artisan cakes, mousse pastries, and sweet trifles'
+    }
+  },
+  {
     id: 'drinks',
     name: {
       ru: 'Напитки',
@@ -522,6 +536,216 @@ export const MENU_ITEMS: Dish[] = [
     calories: 620,
     image: '/dishes/pirojok-kartoshka-gosht.jpg',
     defaultPlaceholderType: 'pirojok'
+  },
+
+  // ===================== SHIRINLIKLAR (DESSERTS) =====================
+  {
+    id: 'fistashka-motilda',
+    categoryId: 'desserts',
+    title: {
+      ru: 'Фисташковая Мотильда',
+      uz: 'FISTASHKA MOTILDA',
+      en: 'Pistachio Matilda Cake'
+    },
+    description: {
+      ru: 'Знаменитый влажный шоколадно-бисквитный торт «Мотильда» с насыщенным натуральным фисташковым кремом и дроблеными фисташками.',
+      uz: "Mashhur «Motilda» shokoladli yumshoq biskviti, tabiiy pista (fistashka) kremi va ustiga sepilgan saralangan pista bo'laklari bilan.",
+      en: 'Decadent rich Matilda chocolate fudge cake smothered in velvety pistachio cream and roasted pistachios.'
+    },
+    price: 60000,
+    portion: {
+      ru: '1 порция (220 г)',
+      uz: '1 porsiya (220 g)',
+      en: '1 portion (220 g)'
+    },
+    tags: ['Фирменное', 'Фисташка', 'Хит'],
+    popular: true,
+    preparationTime: 5,
+    calories: 480,
+    image: '/dishes/desserts/fistashka-motilda.jpg',
+    defaultPlaceholderType: 'dessert'
+  },
+  {
+    id: 'malina-mousse',
+    categoryId: 'desserts',
+    title: {
+      ru: 'Пирожное Малина',
+      uz: 'MALINA',
+      en: 'Raspberry Mousse'
+    },
+    description: {
+      ru: 'Изысканное муссовое пирожное в форме спелой малины с ягодным конфитюром внутри, на песочном сабле с зеркальной глазурью.',
+      uz: "Yetilgan malina mevali muss pirojnoye, ichida nordon-shirin malina konfisi, sable pechenyesi va yaltiroq glazur bilan.",
+      en: 'Artisan raspberry-shaped mousse cake filled with tart-sweet raspberry confit on a crisp sablé crust.'
+    },
+    price: 35000,
+    portion: {
+      ru: '1 шт (150 г)',
+      uz: '1 dona (150 g)',
+      en: '1 pc (150 g)'
+    },
+    tags: ['Муссовое', 'Ягодное', 'Премиум'],
+    popular: true,
+    preparationTime: 5,
+    calories: 310,
+    image: '/dishes/desserts/malina.jpg',
+    defaultPlaceholderType: 'dessert'
+  },
+  {
+    id: 'mango-mousse',
+    categoryId: 'desserts',
+    title: {
+      ru: 'Пирожное Манго',
+      uz: 'MANGO',
+      en: 'Mango Mousse'
+    },
+    description: {
+      ru: 'Авторское муссовое пирожное в виде тропического манго с яркой начинкой из спелого манго и маракуйи на хрустящей основе.',
+      uz: "Tropik yetilgan mango mevasiga o'xshash nafis mussli desert, ichida tabiiy shirin mango mevali nachinkasi bilan.",
+      en: 'Signature realistic tropical mango mousse dessert filled with luscious mango and passionfruit coulis on a cookie base.'
+    },
+    price: 35000,
+    portion: {
+      ru: '1 шт (160 г)',
+      uz: '1 dona (160 g)',
+      en: '1 pc (160 g)'
+    },
+    tags: ['Тропическое', 'Муссовое', 'Хит'],
+    popular: true,
+    preparationTime: 5,
+    calories: 290,
+    image: '/dishes/desserts/mango.jpg',
+    defaultPlaceholderType: 'dessert'
+  },
+  {
+    id: 'mango-trayfl',
+    categoryId: 'desserts',
+    title: {
+      ru: 'Манго Трайфл',
+      uz: 'MANGO TRAYFL',
+      en: 'Mango Trifle'
+    },
+    description: {
+      ru: 'Многослойный десерт в стаканчике: воздушный ванильный бисквит, нежный сливочный крем и сочные кусочки манго с маракуйей.',
+      uz: 'Shaffof idishdagi qat-qat desert: mayin vanilli biskvit, qaymoqli krem va yangi mango hamda marakuya mevalari.',
+      en: 'Chilled layered trifle dessert with airy vanilla sponge, light cream cheese mousse, and sweet mango chunks.'
+    },
+    price: 35000,
+    portion: {
+      ru: '1 порция (200 г)',
+      uz: '1 porsiya (200 g)',
+      en: '1 portion (200 g)'
+    },
+    tags: ['Трайфл', 'Манго', 'Освежающее'],
+    popular: true,
+    preparationTime: 5,
+    calories: 330,
+    image: '/dishes/desserts/mango-trayfl.jpg',
+    defaultPlaceholderType: 'dessert'
+  },
+  {
+    id: 'motilda-chocolate',
+    categoryId: 'desserts',
+    title: {
+      ru: 'Торт Мотильда',
+      uz: 'MOTILDA',
+      en: 'Matilda Chocolate Cake'
+    },
+    description: {
+      ru: 'Легендарный влажный шоколадный торт «Мотильда» под толстым слоем темного шоколадного ганаша с кусочками белого и молочного шоколада.',
+      uz: 'Haqiqiy shokolad shinavandalari uchun quyuq, shirali shokoladli biskvit va nozik shokoladli ganash bilan tayyorlangan Motilda torti.',
+      en: 'The legendary fudge-like Matilda chocolate cake covered in rich glossy ganache with chocolate crisps.'
+    },
+    price: 35000,
+    portion: {
+      ru: '1 порция (200 г)',
+      uz: '1 porsiya (200 g)',
+      en: '1 portion (200 g)'
+    },
+    tags: ['Шоколад', 'Фирменное', 'Хит'],
+    popular: true,
+    preparationTime: 5,
+    calories: 510,
+    image: '/dishes/desserts/motilda.jpg',
+    defaultPlaceholderType: 'dessert'
+  },
+  {
+    id: 'napalyon-cake',
+    categoryId: 'desserts',
+    title: {
+      ru: 'Торт Наполеон',
+      uz: 'Napalyon',
+      en: 'Napoleon Cake'
+    },
+    description: {
+      ru: 'Классический слоеный торт «Наполеон» из тончайших хрустящих коржей с нежнейшим сливочно-заварным кремом пломбир.',
+      uz: "Yupqa qarsildoq qatlama xamirlar va mayin vanilli quyuq qaymoqli zavarnoy krem uyg'unligidagi an'anaviy Napaleon torti.",
+      en: 'Classic multi-layered flaky mille-feuille Napoleon cake layered with silky vanilla diplomat pastry cream.'
+    },
+    price: 25000,
+    portion: {
+      ru: '1 кусочек (180 г)',
+      uz: '1 bo’lak (180 g)',
+      en: '1 slice (180 g)'
+    },
+    tags: ['Классика', 'Слоеное', 'Хит'],
+    popular: true,
+    preparationTime: 5,
+    calories: 420,
+    image: '/dishes/desserts/napalyon.jpg',
+    defaultPlaceholderType: 'dessert'
+  },
+  {
+    id: 'qulipnay-trayfl',
+    categoryId: 'desserts',
+    title: {
+      ru: 'Клубничный Трайфл',
+      uz: 'QULIPNAY TRAYFL',
+      en: 'Strawberry Trifle'
+    },
+    description: {
+      ru: 'Нежнейший трайфл с шоколадным бисквитом, легким сливочным кремом, кусочками сочной свежей клубники и молочным шоколадом.',
+      uz: "Shokoladli biskvit, mayin qaymoqli krem, yangi barra qulipnay bo'laklari va ustidan quyilgan sutli shokoladli trayfl.",
+      en: 'Individual layered dessert cup with soft chocolate sponge, light diplomat cream, fresh strawberry chunks, and milk chocolate.'
+    },
+    price: 35000,
+    portion: {
+      ru: '1 порция (200 г)',
+      uz: '1 porsiya (200 g)',
+      en: '1 portion (200 g)'
+    },
+    tags: ['Клубника', 'Трайфл', 'Шоколад'],
+    popular: true,
+    preparationTime: 5,
+    calories: 340,
+    image: '/dishes/desserts/qulipnay-trayfl.jpg',
+    defaultPlaceholderType: 'dessert'
+  },
+  {
+    id: 'sansebastyan-cheesecake',
+    categoryId: 'desserts',
+    title: {
+      ru: 'Чизкейк Сан-Себастьян',
+      uz: 'Sansebastyan',
+      en: 'San Sebastian Cheesecake'
+    },
+    description: {
+      ru: 'Знаменитый баскский жженый чизкейк с карамельной обожженной корочкой и шелковистой, тающей кремовой сердцевиной.',
+      uz: 'Mashhur baskcha pishirilgan chizkeyk: usti karamelli qobiqli, ichi esa eruvchan mayin qaymoqli San-Sebastyan.',
+      en: 'Authentic Basque burnt San Sebastian cheesecake with a deeply caramelized crust and molten creamy center.'
+    },
+    price: 32000,
+    portion: {
+      ru: '1 кусочек (170 г)',
+      uz: '1 bo’lak (170 g)',
+      en: '1 slice (170 g)'
+    },
+    tags: ['Чизкейк', 'Популярное', 'Баскский'],
+    popular: true,
+    preparationTime: 5,
+    calories: 460,
+    image: '/dishes/desserts/sansebastyan.jpg',
+    defaultPlaceholderType: 'dessert'
   },
 
   // ===================== NAPITKI (DRINKS) =====================
