@@ -499,7 +499,7 @@ export const MENU_ITEMS: Dish[] = [
       uz: "Tilla rang, sirti qarsildoq, ichi mayin issiq kartoshka fri maxsus sous bilan.",
       en: 'Golden crispy on the outside, tender on the inside hot french fries served with dipping sauce.'
     },
-    price: 22000,
+    price: 25000,
     portion: {
       ru: '1 порция (180 г)',
       uz: '1 porsiya (180 g)',
@@ -509,6 +509,7 @@ export const MENU_ITEMS: Dish[] = [
     popular: true,
     preparationTime: 8,
     calories: 380,
+    image: '/dishes/kartoshka-fri.jpg',
     defaultPlaceholderType: 'french-fries'
   },
   {
